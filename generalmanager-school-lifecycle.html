@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="School Management Portal" />
-    <title>School Portal | School Managers</title>
+    <title>School Portal | Edit / Delete Schools</title>
     <!-- Layout bootstrap/init -->
     <script src="_LayoutScripts.js"></script>
 
@@ -337,7 +337,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">School Managers</h1>
+            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">Edit / Delete Schools</h1>
 
             <div class="nav-actions">
 
@@ -482,265 +482,297 @@
             -->
 
             <div class="page-title-row">
-                <h2 id="pageTitle">School Managers</h2>
-                <p class="page-lead">Monitor school manager accounts, review assignment status, and update manager access across all registered schools.</p>
+                <h2 id="pageTitle">Edit / Delete Schools</h2>
+                <p class="page-lead">Review and update an existing school profile, adjust subscription dates and activation status, or remove the school when lifecycle checks are complete.</p>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="generalmanager-dashboard.html">General Manager</a></li>
-                        <li class="breadcrumb-item active" id="breadcrumbCurrent">School Managers</li>
+                        <li class="breadcrumb-item active" id="breadcrumbCurrent">Edit / Delete Schools</li>
                     </ol>
                 </nav>
             </div>
 
-            <section class="gm-toolbar-card mb-4" aria-label="Manager filters">
-                <div class="gm-toolbar-grid">
-                    <div>
-                        <label class="gm-field-label" for="managerSearchInput">Search managers</label>
-                        <div class="gm-search-wrap">
-                            <i class="fas fa-search gm-search-icon" aria-hidden="true"></i>
-                            <input id="managerSearchInput"
-                                   class="gm-search-input"
-                                   type="search"
-                                   placeholder="Search by manager name, school, email, or phone" />
+            <div class="gm-form-layout">
+                <div class="gm-form-stack">
+                    <section class="gm-form-card" aria-labelledby="schoolProfileTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="schoolProfileTitle">School Profile</h3>
+                            <p class="gm-form-card-subtitle">Review and update the stored identity details used across the platform for this school profile.</p>
                         </div>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="managerStatusFilter">Status</label>
-                        <select id="managerStatusFilter" class="gm-filter-select">
-                            <option>All Statuses</option>
-                            <option>Active</option>
-                            <option>Pending</option>
-                            <option>Under Review</option>
-                            <option>Inactive</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="managerRegionFilter">Region</label>
-                        <select id="managerRegionFilter" class="gm-filter-select">
-                            <option>All Regions</option>
-                            <option>North District</option>
-                            <option>Central District</option>
-                            <option>South District</option>
-                            <option>Coastal District</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="managerSchoolFilter">School</label>
-                        <select id="managerSchoolFilter" class="gm-filter-select">
-                            <option>All Schools</option>
-                            <option>Bright Future Academy</option>
-                            <option>Green Valley High School</option>
-                            <option>Horizon Primary School</option>
-                            <option>Atlas International School</option>
-                        </select>
-                    </div>
-                    <div>
-                        <a class="gm-primary-btn" href="generalmanager-manager-accounts.html">
-                            <i class="fas fa-user-plus"></i>
-                            <span>Add Manager</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="SchoolName">SchoolName</label>
+                                <input class="gm-input" id="SchoolName" name="SchoolName" type="text" value="Bright Future Academy" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="SchoolCode">SchoolCode</label>
+                                <input class="gm-input" id="SchoolCode" name="SchoolCode" type="text" value="SCH-1001" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="SchoolType">SchoolType</label>
+                                <select class="gm-select" id="SchoolType" name="SchoolType">
+                                    <option value="">Select school type</option>
+                                    <option>Primary</option>
+                                    <option>Middle School</option>
+                                    <option>Secondary</option>
+                                    <option selected>K-12</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="EducationSystem">EducationSystem</label>
+                                <input class="gm-input" id="EducationSystem" name="EducationSystem" type="text" value="National Curriculum" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="RegistrationNumber">RegistrationNumber</label>
+                                <input class="gm-input" id="RegistrationNumber" name="RegistrationNumber" type="text" value="REG-2023-0045" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="EstablishedYear">EstablishedYear</label>
+                                <input class="gm-input" id="EstablishedYear" name="EstablishedYear" type="number" value="2018" />
+                            </div>
+                        </div>
+                    </section>
 
-            <section class="gm-table-card" aria-labelledby="managersTableTitle">
-                <div class="gm-table-header">
-                    <div>
-                        <h3 class="gm-table-title" id="managersTableTitle">Manager Directory</h3>
-                        <p class="gm-table-subtitle">A full overview of school manager assignments, contact details, and current account status.</p>
-                    </div>
-                    <span class="gm-table-count">21 Managers</span>
+                    <section class="gm-form-card" aria-labelledby="contactDetailsTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="contactDetailsTitle">Contact And Location</h3>
+                            <p class="gm-form-card-subtitle">Update contact channels, address, and location details before applying lifecycle changes.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="Email">Email</label>
+                                <input class="gm-input" id="Email" name="Email" type="email" value="info@brightfuture.edu" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="PhoneNumber">PhoneNumber</label>
+                                <input class="gm-input" id="PhoneNumber" name="PhoneNumber" type="tel" value="+212 600 555 100" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="City">City</label>
+                                <input class="gm-input" id="City" name="City" type="text" value="Casablanca" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="Region">Region</label>
+                                <select class="gm-select" id="Region" name="Region">
+                                    <option value="">Select region</option>
+                                    <option selected>Central District</option>
+                                    <option>North District</option>
+                                    <option>South District</option>
+                                    <option>Coastal District</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="Website">Website</label>
+                                <input class="gm-input" id="Website" name="Website" type="url" value="https://www.brightfuture.edu" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="StudentCapacity">StudentCapacity</label>
+                                <input class="gm-input" id="StudentCapacity" name="StudentCapacity" type="number" value="1200" />
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="Address">Address</label>
+                                <textarea class="gm-textarea" id="Address" name="Address">125 Education Avenue, Central District, Casablanca</textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-card" aria-labelledby="managerAccountTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="managerAccountTitle">Assigned Manager Account</h3>
+                            <p class="gm-form-card-subtitle">Review the current manager information before transferring ownership, archiving, or deleting the school.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="ManagerFullName">ManagerFullName</label>
+                                <input class="gm-input" id="ManagerFullName" name="ManagerFullName" type="text" value="Laila Karim" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="ManagerUserName">ManagerUserName</label>
+                                <input class="gm-input" id="ManagerUserName" name="ManagerUserName" type="text" value="lkarim" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="ManagerEmail">ManagerEmail</label>
+                                <input class="gm-input" id="ManagerEmail" name="ManagerEmail" type="email" value="laila.karim@brightfuture.edu" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="ManagerPhoneNumber">ManagerPhoneNumber</label>
+                                <input class="gm-input" id="ManagerPhoneNumber" name="ManagerPhoneNumber" type="tel" value="+212 600 900 110" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="TemporaryPassword">ResetPassword</label>
+                                <input class="gm-input" id="TemporaryPassword" name="TemporaryPassword" type="text" placeholder="Only enter a value if access must be reset" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="PreferredLanguage">PreferredLanguage</label>
+                                <select class="gm-select" id="PreferredLanguage" name="PreferredLanguage">
+                                    <option value="">Select language</option>
+                                    <option selected>English</option>
+                                    <option>French</option>
+                                    <option>Arabic</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-card" aria-labelledby="subscriptionTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="subscriptionTitle">Subscription And Status</h3>
+                            <p class="gm-form-card-subtitle">Adjust subscription dates, licensing limits, and activation state before archiving or deleting the record.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="SubscriptionPlan">SubscriptionPlan</label>
+                                <select class="gm-select" id="SubscriptionPlan" name="SubscriptionPlan">
+                                    <option value="">Select plan</option>
+                                    <option>Starter</option>
+                                    <option selected>Standard</option>
+                                    <option>Premium</option>
+                                    <option>Enterprise</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="BillingCycle">BillingCycle</label>
+                                <select class="gm-select" id="BillingCycle" name="BillingCycle">
+                                    <option value="">Select billing cycle</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option selected>Yearly</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="SubscriptionStartDate">SubscriptionStartDate</label>
+                                <input class="gm-input" id="SubscriptionStartDate" name="SubscriptionStartDate" type="date" value="2026-01-01" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="SubscriptionEndDate">SubscriptionEndDate</label>
+                                <input class="gm-input" id="SubscriptionEndDate" name="SubscriptionEndDate" type="date" value="2026-12-31" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="MaxUsers">MaxUsers</label>
+                                <input class="gm-input" id="MaxUsers" name="MaxUsers" type="number" value="75" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="MaxStudents">MaxStudents</label>
+                                <input class="gm-input" id="MaxStudents" name="MaxStudents" type="number" value="1500" />
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="IsActive">IsActive</label>
+                                <label class="gm-switch" for="IsActive">
+                                    <input id="IsActive" name="IsActive" type="checkbox" checked />
+                                    <span class="gm-switch-slider" aria-hidden="true"></span>
+                                    <span class="gm-switch-copy">
+                                        <strong>School account is active</strong>
+                                        <small>Turn this off before archiving the school or preparing the record for deletion.</small>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="Notes">Notes</label>
+                                <textarea class="gm-textarea" id="Notes" name="Notes">Address update requested by the central operations team. Subscription renewal should be reviewed before December 31, 2026.</textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-actions" aria-label="Form actions">
+                        <button class="gm-primary-btn" type="button">
+                            <i class="fas fa-floppy-disk"></i>
+                            <span>Update School</span>
+                        </button>
+                        <button class="gm-action-btn" type="button">
+                            <i class="fas fa-box-archive"></i>
+                            <span>Archive School</span>
+                        </button>
+                        <button class="gm-action-btn delete" type="button">
+                            <i class="fas fa-trash"></i>
+                            <span>Delete School</span>
+                        </button>
+                    </section>
                 </div>
 
-                <div class="gm-table-wrap">
-                    <table class="table gm-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Manager</th>
-                                <th scope="col">Assigned School</th>
-                                <th scope="col">Region</th>
-                                <th scope="col">Contact</th>
-                                <th scope="col">Last Active</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Laila Karim</div>
-                                            <div class="school-sub">Manager since 2023</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Bright Future Academy</div>
-                                    <div class="school-sub">SCH-1001</div>
-                                </td>
-                                <td>Central District</td>
-                                <td>
-                                    <div class="school-name">laila.karim@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 111 248</div>
-                                </td>
-                                <td>Today, 08:20</td>
-                                <td><span class="status-pill active">Active</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Omar Benali</div>
-                                            <div class="school-sub">Manager since 2022</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Green Valley High School</div>
-                                    <div class="school-sub">SCH-1015</div>
-                                </td>
-                                <td>North District</td>
-                                <td>
-                                    <div class="school-name">omar.benali@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 204 892</div>
-                                </td>
-                                <td>Today, 10:05</td>
-                                <td><span class="status-pill active">Active</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Sara El Idrissi</div>
-                                            <div class="school-sub">Awaiting onboarding approval</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Horizon Primary School</div>
-                                    <div class="school-sub">SCH-1044</div>
-                                </td>
-                                <td>Coastal District</td>
-                                <td>
-                                    <div class="school-name">sara.idrissi@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 318 514</div>
-                                </td>
-                                <td>Yesterday</td>
-                                <td><span class="status-pill pending">Pending</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Youssef Haddad</div>
-                                            <div class="school-sub">Documents under compliance review</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Atlas International School</div>
-                                    <div class="school-sub">SCH-1092</div>
-                                </td>
-                                <td>South District</td>
-                                <td>
-                                    <div class="school-name">youssef.haddad@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 442 638</div>
-                                </td>
-                                <td>Apr 3</td>
-                                <td><span class="status-pill review">Under Review</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Nadia Rahimi</div>
-                                            <div class="school-sub">Account access paused</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Sunrise Preparatory School</div>
-                                    <div class="school-sub">SCH-1120</div>
-                                </td>
-                                <td>Central District</td>
-                                <td>
-                                    <div class="school-name">nadia.rahimi@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 533 421</div>
-                                </td>
-                                <td>Apr 1</td>
-                                <td><span class="status-pill inactive">Inactive</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+                <aside class="gm-form-sidebar">
+                    <section class="gm-panel-card mb-4" aria-labelledby="setupChecklistTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="setupChecklistTitle">Lifecycle Checklist</h3>
+                            <p class="gm-panel-subtitle">Recommended checks before updating, archiving, or deleting this school.</p>
+                        </div>
+                        <div class="gm-status-list">
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">1</span> School profile changes reviewed</span>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">2</span> Manager ownership confirmed</span>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">3</span> Subscription dates confirmed</span>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">4</span> Archive or delete approval recorded</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-panel-card mb-4" aria-labelledby="defaultFeaturesTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="defaultFeaturesTitle">Protected Data Areas</h3>
+                            <p class="gm-panel-subtitle">Review these modules before archiving or deleting the school record.</p>
+                        </div>
+                        <div class="gm-region-list">
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>Attendance History</strong>
+                                    <small>Daily student and staff attendance records</small>
+                                </div>
+                                <span class="gm-meta">Review</span>
+                            </div>
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>Parent Portal Access</strong>
+                                    <small>Family logins and communication records</small>
+                                </div>
+                                <span class="gm-meta">Review</span>
+                            </div>
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>Finance Module</strong>
+                                    <small>Fees, billing, and payment follow-up</small>
+                                </div>
+                                <span class="gm-meta">Sensitive</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-panel-card" aria-labelledby="summaryTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="summaryTitle">Lifecycle Actions</h3>
+                            <p class="gm-panel-subtitle">This screen supports the following administrative actions.</p>
+                        </div>
+                        <div class="gm-quick-actions">
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-school"></i></span>
+                                <span>
+                                    <strong>Update School Record</strong>
+                                    <small>Edit identity, contact, and capacity details</small>
+                                </span>
+                            </div>
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-box-archive"></i></span>
+                                <span>
+                                    <strong>Archive School</strong>
+                                    <small>Disable access while preserving school history</small>
+                                </span>
+                            </div>
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-trash"></i></span>
+                                <span>
+                                    <strong>Delete School</strong>
+                                    <small>Remove the record after approvals and data checks</small>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
+            </div>
 
         </main><!-- /.content-area -->
 
