@@ -135,6 +135,16 @@
         var toggleBtn = document.getElementById('sidebarToggleBtn');
         var overlay = document.getElementById('sidebarOverlay');
 
+        function clearHoverExpanded() {
+            if (sidebar) {
+                sidebar.classList.remove('hover-expanded');
+            }
+        }
+
+        function isDesktopCollapsed() {
+            return !isMobile() && sidebar && sidebar.classList.contains('collapsed');
+        }
+
         if (toggleBtn && sidebar && overlay) {
             toggleBtn.addEventListener('click', function () {
                 if (isMobile()) {
@@ -150,6 +160,8 @@
                 if (!content) {
                     return;
                 }
+
+                clearHoverExpanded();
 
                 var collapsed = sidebar.classList.toggle('collapsed');
                 content.classList.toggle('expanded', collapsed);
@@ -170,7 +182,33 @@
             content.classList.add('expanded');
         }
 
+        if (sidebar) {
+            sidebar.addEventListener('mouseenter', function () {
+                if (isDesktopCollapsed()) {
+                    sidebar.classList.add('hover-expanded');
+                }
+            });
+
+            sidebar.addEventListener('mouseleave', function () {
+                clearHoverExpanded();
+            });
+
+            sidebar.addEventListener('focusin', function () {
+                if (isDesktopCollapsed()) {
+                    sidebar.classList.add('hover-expanded');
+                }
+            });
+
+            sidebar.addEventListener('focusout', function (event) {
+                if (!sidebar.contains(event.relatedTarget)) {
+                    clearHoverExpanded();
+                }
+            });
+        }
+
         window.addEventListener('resize', function () {
+            clearHoverExpanded();
+
             if (!isMobile() && sidebar && overlay) {
                 sidebar.classList.remove('mobile-open');
                 overlay.classList.remove('show');
