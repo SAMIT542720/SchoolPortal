@@ -22,6 +22,15 @@
         }
     };
     var MOBILE_BREAKPOINT = 992;
+    var ROLE_PREVIEW_CONFIG = {
+        'show-all': { label: 'All Roles' },
+        student: { label: 'Student' },
+        teacher: { label: 'Teacher' },
+        schoolmanager: { label: 'School Manager' },
+        schoolconsoloer: { label: 'School Counselor' },
+        parent: { label: 'Parent' },
+        generalmanager: { label: 'General Manager' }
+    };
 
     function getStoredItem(key, fallback) {
         try {
@@ -321,12 +330,58 @@
         });
     }
 
+    function initRolePreview() {
+        var select = document.getElementById('rolePreviewSelect');
+        var roleItems = document.querySelectorAll('.sidebar-nav [data-role]');
+
+        if (!select || !roleItems.length) {
+            return;
+        }
+
+        function normalizeRole(role) {
+            return ROLE_PREVIEW_CONFIG[role] ? role : 'show-all';
+        }
+
+        function applyRolePreview(role) {
+            var normalizedRole = normalizeRole(role);
+
+            select.value = normalizedRole;
+            setStoredItem('sp_preview_role', normalizedRole);
+            document.body.setAttribute('data-preview-role', normalizedRole);
+
+            roleItems.forEach(function (item) {
+                var itemRole = item.getAttribute('data-role');
+                var isVisible =
+                    normalizedRole === 'show-all' ||
+                    itemRole === 'all' ||
+                    itemRole === normalizedRole;
+
+                item.hidden = !isVisible;
+            });
+        }
+
+        applyRolePreview(getStoredItem('sp_preview_role', 'show-all'));
+
+        select.addEventListener('change', function () {
+            applyRolePreview(select.value);
+        });
+    }
+
     function initActiveNavigation() {
         var path = window.location.pathname.replace(/\/+$/, '') || '/';
 
         document.querySelectorAll('.sidebar-nav .nav-link[data-path]').forEach(function (link) {
-            var linkPath = link.dataset.path.replace(/\/+$/, '');
-            if (path !== linkPath && !path.startsWith(linkPath + '/')) {
+            var dataPath = (link.dataset.path || '').replace(/\/+$/, '');
+            var hrefAttr = link.getAttribute('href') || '';
+            var hrefPath = hrefAttr
+                ? new URL(hrefAttr, window.location.origin).pathname.replace(/\/+$/, '')
+                : '';
+            var matchesDataPath =
+                dataPath && (path === dataPath || path.startsWith(dataPath + '/'));
+            var matchesHrefPath =
+                hrefPath && (path === hrefPath || path.startsWith(hrefPath + '/'));
+
+            if (!matchesDataPath && !matchesHrefPath) {
                 return;
             }
 
@@ -358,6 +413,7 @@
         initSidebar();
         initSubmenus();
         initHeaderDropdowns();
+        initRolePreview();
         initActiveNavigation();
         initFooterYear();
     }
