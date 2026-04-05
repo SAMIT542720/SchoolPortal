@@ -453,9 +453,30 @@ a {
     position: relative;
 }
 
+.top-navbar .dropdown-menu {
+    top: calc(100% + 0.5rem);
+    right: 0;
+    left: auto;
+    margin: 0;
+    max-width: calc(100vw - 1rem);
+}
+
+[dir="rtl"] .top-navbar .dropdown-menu {
+    right: auto;
+    left: 0;
+}
+
 .top-navbar .dropdown-menu.show {
     z-index: 1051;
     display: block;
+}
+
+.top-navbar .dropdown-menu[aria-labelledby="userDropdown"] {
+    min-width: 13rem;
+}
+
+.top-navbar .dropdown-menu[aria-labelledby="langDropdown"] {
+    min-width: 10rem;
 }
 
 .notif-icon {
@@ -613,6 +634,44 @@ a {
     [dir="rtl"] .main-content {
         margin-right: 0 !important;
         margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .top-navbar {
+        padding: 0 0.75rem;
+    }
+
+    .nav-actions {
+        gap: 0.25rem;
+    }
+
+    .top-navbar .dropdown-menu {
+        position: fixed;
+        top: calc(var(--navbar-h) + 0.35rem);
+        right: 0.5rem;
+        left: auto;
+        min-width: 0;
+        margin: 0;
+        max-width: calc(100vw - 1rem);
+    }
+
+    [dir="rtl"] .top-navbar .dropdown-menu {
+        right: auto;
+        left: 0.5rem;
+    }
+
+    .notifications-menu {
+        width: min(310px, calc(100vw - 1rem));
+        max-height: calc(100vh - var(--navbar-h) - 1rem);
+    }
+
+    .top-navbar .dropdown-menu[aria-labelledby="userDropdown"] {
+        width: min(13rem, calc(100vw - 1rem));
+    }
+
+    .top-navbar .dropdown-menu[aria-labelledby="langDropdown"] {
+        width: min(10rem, calc(100vw - 1rem));
     }
 }
 
