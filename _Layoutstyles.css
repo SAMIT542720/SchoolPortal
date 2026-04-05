@@ -449,6 +449,15 @@ a {
     font-size: 0.6rem;
 }
 
+.top-navbar .dropdown {
+    position: relative;
+}
+
+.top-navbar .dropdown-menu.show {
+    z-index: 1051;
+    display: block;
+}
+
 .notif-icon {
     display: flex;
     width: 34px;
