@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="School Management Portal" />
-    <title>School Portal</title>
+    <title>School Portal | School Managers</title>
     <!-- Layout bootstrap/init -->
     <script src="_LayoutScripts.js"></script>
 
@@ -337,7 +337,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">Dashboard</h1>
+            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">School Managers</h1>
 
             <div class="nav-actions">
 
@@ -482,71 +482,265 @@
             -->
 
             <div class="page-title-row">
-                <h2 id="pageTitle">Dashboard</h2>
+                <h2 id="pageTitle">School Managers</h2>
+                <p class="page-lead">Monitor school manager accounts, review assignment status, and update manager access across all registered schools.</p>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" id="breadcrumbCurrent">Dashboard</li>
+                        <li class="breadcrumb-item"><a href="generalmanager-dashboard.html">General Manager</a></li>
+                        <li class="breadcrumb-item active" id="breadcrumbCurrent">School Managers</li>
                     </ol>
                 </nav>
             </div>
 
-            <!-- Sample placeholder cards -->
-            <div class="row g-3">
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm rounded-3 p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon stat-icon-students">
-                                <i class="fas fa-user-graduate"></i>
-                            </div>
-                            <div>
-                                <div class="text-muted stat-label">Total Students</div>
-                                <div class="fw-bold fs-5">1,248</div>
-                            </div>
+            <section class="gm-toolbar-card mb-4" aria-label="Manager filters">
+                <div class="gm-toolbar-grid">
+                    <div>
+                        <label class="gm-field-label" for="managerSearchInput">Search managers</label>
+                        <div class="gm-search-wrap">
+                            <i class="fas fa-search gm-search-icon" aria-hidden="true"></i>
+                            <input id="managerSearchInput"
+                                   class="gm-search-input"
+                                   type="search"
+                                   placeholder="Search by manager name, school, email, or phone" />
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm rounded-3 p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon stat-icon-teachers">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                            </div>
-                            <div>
-                                <div class="text-muted stat-label">Total Teachers</div>
-                                <div class="fw-bold fs-5">84</div>
-                            </div>
-                        </div>
+                    <div>
+                        <label class="gm-field-label" for="managerStatusFilter">Status</label>
+                        <select id="managerStatusFilter" class="gm-filter-select">
+                            <option>All Statuses</option>
+                            <option>Active</option>
+                            <option>Pending</option>
+                            <option>Under Review</option>
+                            <option>Inactive</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="managerRegionFilter">Region</label>
+                        <select id="managerRegionFilter" class="gm-filter-select">
+                            <option>All Regions</option>
+                            <option>North District</option>
+                            <option>Central District</option>
+                            <option>South District</option>
+                            <option>Coastal District</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="managerSchoolFilter">School</label>
+                        <select id="managerSchoolFilter" class="gm-filter-select">
+                            <option>All Schools</option>
+                            <option>Bright Future Academy</option>
+                            <option>Green Valley High School</option>
+                            <option>Horizon Primary School</option>
+                            <option>Atlas International School</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button class="gm-primary-btn" type="button">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add Manager</span>
+                        </button>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm rounded-3 p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon stat-icon-classes">
-                                <i class="fas fa-door-open"></i>
-                            </div>
-                            <div>
-                                <div class="text-muted stat-label">Active Classes</div>
-                                <div class="fw-bold fs-5">36</div>
-                            </div>
-                        </div>
+            </section>
+
+            <section class="gm-table-card" aria-labelledby="managersTableTitle">
+                <div class="gm-table-header">
+                    <div>
+                        <h3 class="gm-table-title" id="managersTableTitle">Manager Directory</h3>
+                        <p class="gm-table-subtitle">A full overview of school manager assignments, contact details, and current account status.</p>
                     </div>
+                    <span class="gm-table-count">21 Managers</span>
                 </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm rounded-3 p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon stat-icon-absent">
-                                <i class="fas fa-clipboard-check"></i>
-                            </div>
-                            <div>
-                                <div class="text-muted stat-label">Absent Today</div>
-                                <div class="fw-bold fs-5">3</div>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="gm-table-wrap">
+                    <table class="table gm-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Manager</th>
+                                <th scope="col">Assigned School</th>
+                                <th scope="col">Region</th>
+                                <th scope="col">Contact</th>
+                                <th scope="col">Last Active</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="school-cell">
+                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
+                                        <div>
+                                            <div class="school-name">Laila Karim</div>
+                                            <div class="school-sub">Manager since 2023</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="school-name">Bright Future Academy</div>
+                                    <div class="school-sub">SCH-1001</div>
+                                </td>
+                                <td>Central District</td>
+                                <td>
+                                    <div class="school-name">laila.karim@schoolportal.com</div>
+                                    <div class="school-sub">+212 600 111 248</div>
+                                </td>
+                                <td>Today, 08:20</td>
+                                <td><span class="status-pill active">Active</span></td>
+                                <td>
+                                    <div class="gm-actions">
+                                        <button class="gm-action-btn" type="button">
+                                            <i class="fas fa-pen-to-square"></i>
+                                            <span>Edit Details</span>
+                                        </button>
+                                        <button class="gm-action-btn delete" type="button">
+                                            <i class="fas fa-user-xmark"></i>
+                                            <span>Deactivate</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="school-cell">
+                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
+                                        <div>
+                                            <div class="school-name">Omar Benali</div>
+                                            <div class="school-sub">Manager since 2022</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="school-name">Green Valley High School</div>
+                                    <div class="school-sub">SCH-1015</div>
+                                </td>
+                                <td>North District</td>
+                                <td>
+                                    <div class="school-name">omar.benali@schoolportal.com</div>
+                                    <div class="school-sub">+212 600 204 892</div>
+                                </td>
+                                <td>Today, 10:05</td>
+                                <td><span class="status-pill active">Active</span></td>
+                                <td>
+                                    <div class="gm-actions">
+                                        <button class="gm-action-btn" type="button">
+                                            <i class="fas fa-pen-to-square"></i>
+                                            <span>Edit Details</span>
+                                        </button>
+                                        <button class="gm-action-btn delete" type="button">
+                                            <i class="fas fa-user-xmark"></i>
+                                            <span>Deactivate</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="school-cell">
+                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
+                                        <div>
+                                            <div class="school-name">Sara El Idrissi</div>
+                                            <div class="school-sub">Awaiting onboarding approval</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="school-name">Horizon Primary School</div>
+                                    <div class="school-sub">SCH-1044</div>
+                                </td>
+                                <td>Coastal District</td>
+                                <td>
+                                    <div class="school-name">sara.idrissi@schoolportal.com</div>
+                                    <div class="school-sub">+212 600 318 514</div>
+                                </td>
+                                <td>Yesterday</td>
+                                <td><span class="status-pill pending">Pending</span></td>
+                                <td>
+                                    <div class="gm-actions">
+                                        <button class="gm-action-btn" type="button">
+                                            <i class="fas fa-pen-to-square"></i>
+                                            <span>Edit Details</span>
+                                        </button>
+                                        <button class="gm-action-btn delete" type="button">
+                                            <i class="fas fa-user-xmark"></i>
+                                            <span>Deactivate</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="school-cell">
+                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
+                                        <div>
+                                            <div class="school-name">Youssef Haddad</div>
+                                            <div class="school-sub">Documents under compliance review</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="school-name">Atlas International School</div>
+                                    <div class="school-sub">SCH-1092</div>
+                                </td>
+                                <td>South District</td>
+                                <td>
+                                    <div class="school-name">youssef.haddad@schoolportal.com</div>
+                                    <div class="school-sub">+212 600 442 638</div>
+                                </td>
+                                <td>Apr 3</td>
+                                <td><span class="status-pill review">Under Review</span></td>
+                                <td>
+                                    <div class="gm-actions">
+                                        <button class="gm-action-btn" type="button">
+                                            <i class="fas fa-pen-to-square"></i>
+                                            <span>Edit Details</span>
+                                        </button>
+                                        <button class="gm-action-btn delete" type="button">
+                                            <i class="fas fa-user-xmark"></i>
+                                            <span>Deactivate</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="school-cell">
+                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
+                                        <div>
+                                            <div class="school-name">Nadia Rahimi</div>
+                                            <div class="school-sub">Account access paused</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="school-name">Sunrise Preparatory School</div>
+                                    <div class="school-sub">SCH-1120</div>
+                                </td>
+                                <td>Central District</td>
+                                <td>
+                                    <div class="school-name">nadia.rahimi@schoolportal.com</div>
+                                    <div class="school-sub">+212 600 533 421</div>
+                                </td>
+                                <td>Apr 1</td>
+                                <td><span class="status-pill inactive">Inactive</span></td>
+                                <td>
+                                    <div class="gm-actions">
+                                        <button class="gm-action-btn" type="button">
+                                            <i class="fas fa-pen-to-square"></i>
+                                            <span>Edit Details</span>
+                                        </button>
+                                        <button class="gm-action-btn delete" type="button">
+                                            <i class="fas fa-user-xmark"></i>
+                                            <span>Deactivate</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-            <!-- /sample cards -->
+            </section>
 
         </main><!-- /.content-area -->
 
