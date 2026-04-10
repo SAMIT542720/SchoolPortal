@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="School Management Portal" />
-    <title>School Portal | Schools Directory</title>
+    <title>School Portal | General Dashboard</title>
     <!-- Layout bootstrap/init -->
-    <script src="_LayoutScripts.js"></script>
+    <script src="../_LayoutScripts.js"></script>
 
     <!-- Icons & Fonts -->
     <link rel="stylesheet"
@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet" />
-    <link rel="stylesheet" href="_Layoutstyles.css" />
+    <link rel="stylesheet" href="../_Layoutstyles.css" />
 </head>
 
 <body>
@@ -268,43 +268,43 @@
                 <!-- General Manager -->
                 <li data-role="generalmanager"><span class="nav-section-title">General Manager</span></li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-dashboard.html" class="nav-link" data-path="/generalmanager/dashboard">
+                    <a href="Dashboard.html" class="nav-link" data-path="/generalmanager/dashboard">
                         <i class="fas fa-sitemap nav-icon"></i>
                         <span class="nav-label">General Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-schools.html" class="nav-link" data-path="/generalmanager/schools">
+                    <a href="Schools.html" class="nav-link" data-path="/generalmanager/schools">
                         <i class="fas fa-school nav-icon"></i>
                         <span class="nav-label">Schools Directory</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-add-school.html" class="nav-link" data-path="/generalmanager/add-school">
+                    <a href="Add-School.html" class="nav-link" data-path="/generalmanager/add-school">
                         <i class="fas fa-square-plus nav-icon"></i>
                         <span class="nav-label">Add New School</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-school-lifecycle.html" class="nav-link" data-path="/generalmanager/school-lifecycle">
+                    <a href="Edit-Delete-School.html" class="nav-link" data-path="/generalmanager/school-lifecycle">
                         <i class="fas fa-trash-can nav-icon"></i>
                         <span class="nav-label">Edit / Delete Schools</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-school-managers.html" class="nav-link" data-path="/generalmanager/school-managers">
+                    <a href="School-Managers.html" class="nav-link" data-path="/generalmanager/school-managers">
                         <i class="fas fa-user-tie nav-icon"></i>
                         <span class="nav-label">School Managers</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-manager-accounts.html" class="nav-link" data-path="/generalmanager/manager-accounts">
+                    <a href="Create-Manager-Accounts.html" class="nav-link" data-path="/generalmanager/manager-accounts">
                         <i class="fas fa-user-plus nav-icon"></i>
                         <span class="nav-label">Create Manager Accounts</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-reports.html" class="nav-link" data-path="/generalmanager/reports">
+                    <a href="Reports.html" class="nav-link" data-path="/generalmanager/reports">
                         <i class="fas fa-chart-pie nav-icon"></i>
                         <span class="nav-label">Platform Reports</span>
                     </a>
@@ -337,7 +337,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">Schools Directory</h1>
+            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">General Dashboard</h1>
 
             <div class="nav-actions">
 
@@ -482,256 +482,308 @@
             -->
 
             <div class="page-title-row">
-                <h2 id="pageTitle">Schools Directory</h2>
-                <p class="page-lead">Review registered schools, narrow the list with filters, and manage each school's details from one place.</p>
+                <h2 id="pageTitle">General Dashboard</h2>
+                <p class="page-lead">Track school growth, manager activity, and pending operational work across the full platform from one central view.</p>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="generalmanager-dashboard.html">General Manager</a></li>
-                        <li class="breadcrumb-item active" id="breadcrumbCurrent">Schools Directory</li>
+                        <li class="breadcrumb-item active" id="breadcrumbCurrent">General Dashboard</li>
                     </ol>
                 </nav>
             </div>
 
-            <section class="gm-toolbar-card mb-4" aria-label="School filters">
-                <div class="gm-toolbar-grid">
+            <section class="gm-kpi-grid mb-4" aria-label="General manager summary">
+                <article class="gm-kpi-card">
+                    <div class="gm-kpi-icon primary">
+                        <i class="fas fa-school"></i>
+                    </div>
                     <div>
-                        <label class="gm-field-label" for="schoolSearchInput">Search schools</label>
-                        <div class="gm-search-wrap">
-                            <i class="fas fa-search gm-search-icon" aria-hidden="true"></i>
-                            <input id="schoolSearchInput"
-                                   class="gm-search-input"
-                                   type="search"
-                                   placeholder="Search by school name, city, manager, or code" />
+                        <div class="gm-kpi-label">Total Schools</div>
+                        <div class="gm-kpi-value">24</div>
+                        <div class="gm-kpi-trend positive">+3 new schools this quarter</div>
+                    </div>
+                </article>
+                <article class="gm-kpi-card">
+                    <div class="gm-kpi-icon success">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <div class="gm-kpi-label">Active Managers</div>
+                        <div class="gm-kpi-value">21</div>
+                        <div class="gm-kpi-trend positive">92% of manager accounts active</div>
+                    </div>
+                </article>
+                <article class="gm-kpi-card">
+                    <div class="gm-kpi-icon warning">
+                        <i class="fas fa-file-circle-check"></i>
+                    </div>
+                    <div>
+                        <div class="gm-kpi-label">Pending Approvals</div>
+                        <div class="gm-kpi-value">7</div>
+                        <div class="gm-kpi-trend warning">Needs review within 48 hours</div>
+                    </div>
+                </article>
+                <article class="gm-kpi-card">
+                    <div class="gm-kpi-icon danger">
+                        <i class="fas fa-triangle-exclamation"></i>
+                    </div>
+                    <div>
+                        <div class="gm-kpi-label">Flagged Schools</div>
+                        <div class="gm-kpi-value">2</div>
+                        <div class="gm-kpi-trend negative">Compliance follow-up required</div>
+                    </div>
+                </article>
+            </section>
+
+            <div class="row g-4">
+                <div class="col-xl-8">
+                    <section class="gm-table-card mb-4" aria-labelledby="approvalQueueTitle">
+                        <div class="gm-table-header">
+                            <div>
+                                <h3 class="gm-table-title" id="approvalQueueTitle">Approval Queue</h3>
+                                <p class="gm-table-subtitle">Schools and manager requests that need action from the general management team.</p>
+                            </div>
+                            <span class="gm-table-count">7 Pending</span>
                         </div>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="schoolStatusFilter">Status</label>
-                        <select id="schoolStatusFilter" class="gm-filter-select">
-                            <option>All Statuses</option>
-                            <option>Active</option>
-                            <option>Pending</option>
-                            <option>Under Review</option>
-                            <option>Inactive</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="schoolRegionFilter">Region</label>
-                        <select id="schoolRegionFilter" class="gm-filter-select">
-                            <option>All Regions</option>
-                            <option>North District</option>
-                            <option>Central District</option>
-                            <option>South District</option>
-                            <option>Coastal District</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="schoolLevelFilter">School Type</label>
-                        <select id="schoolLevelFilter" class="gm-filter-select">
-                            <option>All Types</option>
-                            <option>Primary</option>
-                            <option>Middle School</option>
-                            <option>Secondary</option>
-                            <option>K-12</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="gm-primary-btn" type="button">
-                            <i class="fas fa-plus"></i>
-                            <span>Add School</span>
-                        </button>
-                    </div>
-                </div>
-            </section>
 
-            <section class="gm-table-card" aria-labelledby="schoolsTableTitle">
-                <div class="gm-table-header">
-                    <div>
-                        <h3 class="gm-table-title" id="schoolsTableTitle">Registered Schools</h3>
-                        <p class="gm-table-subtitle">A management view for school managers, operational status, and enrollment overview.</p>
-                    </div>
-                    <span class="gm-table-count">24 Schools</span>
+                        <div class="gm-table-wrap">
+                            <table class="table gm-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">School</th>
+                                        <th scope="col">Manager</th>
+                                        <th scope="col">Region</th>
+                                        <th scope="col">Priority</th>
+                                        <th scope="col">Requested</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="school-cell">
+                                                <div class="school-logo"><i class="fas fa-school"></i></div>
+                                                <div>
+                                                    <div class="school-name">Horizon Primary School</div>
+                                                    <div class="school-sub">New registration package</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Sara El Idrissi</td>
+                                        <td>Coastal District</td>
+                                        <td><span class="status-pill pending">High</span></td>
+                                        <td>Today, 09:30</td>
+                                        <td>
+                                            <div class="gm-actions">
+                                                <button class="gm-action-btn" type="button">
+                                                    <i class="fas fa-eye"></i>
+                                                    <span>Review</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="school-cell">
+                                                <div class="school-logo"><i class="fas fa-file-circle-check"></i></div>
+                                                <div>
+                                                    <div class="school-name">Atlas International School</div>
+                                                    <div class="school-sub">Compliance update submission</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Youssef Haddad</td>
+                                        <td>South District</td>
+                                        <td><span class="status-pill review">Medium</span></td>
+                                        <td>Yesterday</td>
+                                        <td>
+                                            <div class="gm-actions">
+                                                <button class="gm-action-btn" type="button">
+                                                    <i class="fas fa-eye"></i>
+                                                    <span>Review</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="school-cell">
+                                                <div class="school-logo"><i class="fas fa-user-plus"></i></div>
+                                                <div>
+                                                    <div class="school-name">Bright Future Academy</div>
+                                                    <div class="school-sub">Manager replacement request</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Laila Karim</td>
+                                        <td>Central District</td>
+                                        <td><span class="status-pill active">Normal</span></td>
+                                        <td>Apr 3</td>
+                                        <td>
+                                            <div class="gm-actions">
+                                                <button class="gm-action-btn" type="button">
+                                                    <i class="fas fa-eye"></i>
+                                                    <span>Review</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="gm-table-card" aria-labelledby="activityFeedTitle">
+                        <div class="gm-table-header">
+                            <div>
+                                <h3 class="gm-table-title" id="activityFeedTitle">Recent Platform Activity</h3>
+                                <p class="gm-table-subtitle">A quick look at the latest changes affecting schools, managers, and approvals.</p>
+                            </div>
+                            <span class="gm-table-count">Last 24 Hours</span>
+                        </div>
+
+                        <div class="gm-table-wrap">
+                            <table class="table gm-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Owner</th>
+                                        <th scope="col">Area</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="school-name">New school account created</div>
+                                            <div class="school-sub">Sahara STEM Academy was added to the platform</div>
+                                        </td>
+                                        <td>General Admin Team</td>
+                                        <td>Schools</td>
+                                        <td>08:45</td>
+                                        <td><span class="status-pill active">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="school-name">Manager documents updated</div>
+                                            <div class="school-sub">Green Valley High School uploaded renewed license files</div>
+                                        </td>
+                                        <td>Omar Benali</td>
+                                        <td>Compliance</td>
+                                        <td>Yesterday</td>
+                                        <td><span class="status-pill review">In Review</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="school-name">School marked inactive</div>
+                                            <div class="school-sub">Sunrise Preparatory School needs account reactivation</div>
+                                        </td>
+                                        <td>System Audit</td>
+                                        <td>Operations</td>
+                                        <td>Apr 3</td>
+                                        <td><span class="status-pill inactive">Attention</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
                 </div>
 
-                <div class="gm-table-wrap">
-                    <table class="table gm-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">School</th>
-                                <th scope="col">Manager</th>
-                                <th scope="col">City</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Students</th>
-                                <th scope="col">Staff</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-school"></i></div>
-                                        <div>
-                                            <div class="school-name">Bright Future Academy</div>
-                                            <div class="school-sub">SCH-1001 - Central District</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Laila Karim</div>
-                                    <div class="school-sub">Manager since 2023</div>
-                                </td>
-                                <td>Casablanca</td>
-                                <td><span class="gm-meta">K-12</span></td>
-                                <td>1,248</td>
-                                <td>128</td>
-                                <td><span class="status-pill active">Active</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-trash"></i>
-                                            <span>Delete</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-school"></i></div>
-                                        <div>
-                                            <div class="school-name">Green Valley High School</div>
-                                            <div class="school-sub">SCH-1015 - North District</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Omar Benali</div>
-                                    <div class="school-sub">Manager since 2022</div>
-                                </td>
-                                <td>Rabat</td>
-                                <td><span class="gm-meta">Secondary</span></td>
-                                <td>892</td>
-                                <td>74</td>
-                                <td><span class="status-pill active">Active</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-trash"></i>
-                                            <span>Delete</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-school"></i></div>
-                                        <div>
-                                            <div class="school-name">Horizon Primary School</div>
-                                            <div class="school-sub">SCH-1044 - Coastal District</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Sara El Idrissi</div>
-                                    <div class="school-sub">Account pending activation</div>
-                                </td>
-                                <td>Tangier</td>
-                                <td><span class="gm-meta">Primary</span></td>
-                                <td>514</td>
-                                <td>39</td>
-                                <td><span class="status-pill pending">Pending</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-trash"></i>
-                                            <span>Delete</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-school"></i></div>
-                                        <div>
-                                            <div class="school-name">Atlas International School</div>
-                                            <div class="school-sub">SCH-1092 - South District</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Youssef Haddad</div>
-                                    <div class="school-sub">Compliance documents in review</div>
-                                </td>
-                                <td>Marrakesh</td>
-                                <td><span class="gm-meta">Middle School</span></td>
-                                <td>638</td>
-                                <td>52</td>
-                                <td><span class="status-pill review">Under Review</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-trash"></i>
-                                            <span>Delete</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-school"></i></div>
-                                        <div>
-                                            <div class="school-name">Sunrise Preparatory School</div>
-                                            <div class="school-sub">SCH-1120 - Central District</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Nadia Rahimi</div>
-                                    <div class="school-sub">Manager account suspended</div>
-                                </td>
-                                <td>Fes</td>
-                                <td><span class="gm-meta">Secondary</span></td>
-                                <td>421</td>
-                                <td>33</td>
-                                <td><span class="status-pill inactive">Inactive</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-trash"></i>
-                                            <span>Delete</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-xl-4">
+                    <section class="gm-panel-card mb-4" aria-labelledby="quickActionsTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="quickActionsTitle">Quick Actions</h3>
+                            <p class="gm-panel-subtitle">Jump into the most common management tasks.</p>
+                        </div>
+                        <div class="gm-quick-actions">
+                            <a class="gm-quick-action" href="generalmanager-schools.html">
+                                <span class="gm-quick-action-icon"><i class="fas fa-school"></i></span>
+                                <span>
+                                    <strong>Open Schools Directory</strong>
+                                    <small>Review all registered schools</small>
+                                </span>
+                            </a>
+                            <a class="gm-quick-action" href="generalmanager-add-school.html">
+                                <span class="gm-quick-action-icon"><i class="fas fa-square-plus"></i></span>
+                                <span>
+                                    <strong>Add New School</strong>
+                                    <small>Create a new school profile</small>
+                                </span>
+                            </a>
+                            <a class="gm-quick-action" href="generalmanager-manager-accounts.html">
+                                <span class="gm-quick-action-icon"><i class="fas fa-user-tie"></i></span>
+                                <span>
+                                    <strong>Manager Accounts</strong>
+                                    <small>Create or update school manager access</small>
+                                </span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="gm-panel-card mb-4" aria-labelledby="statusOverviewTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="statusOverviewTitle">Status Overview</h3>
+                            <p class="gm-panel-subtitle">Distribution of schools by operational state.</p>
+                        </div>
+                        <div class="gm-status-list">
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill active">Active</span> Active Schools</span>
+                                <strong>18</strong>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill pending">Pending</span> Pending Activation</span>
+                                <strong>3</strong>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">Review</span> Under Review</span>
+                                <strong>2</strong>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill inactive">Inactive</span> Inactive</span>
+                                <strong>1</strong>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-panel-card" aria-labelledby="regionOverviewTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="regionOverviewTitle">Top Regions</h3>
+                            <p class="gm-panel-subtitle">Highest concentration of registered schools.</p>
+                        </div>
+                        <div class="gm-region-list">
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>Central District</strong>
+                                    <small>8 schools</small>
+                                </div>
+                                <span class="gm-meta">33%</span>
+                            </div>
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>North District</strong>
+                                    <small>6 schools</small>
+                                </div>
+                                <span class="gm-meta">25%</span>
+                            </div>
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>South District</strong>
+                                    <small>5 schools</small>
+                                </div>
+                                <span class="gm-meta">21%</span>
+                            </div>
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>Coastal District</strong>
+                                    <small>5 schools</small>
+                                </div>
+                                <span class="gm-meta">21%</span>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
+            </div>
 
         </main><!-- /.content-area -->
 

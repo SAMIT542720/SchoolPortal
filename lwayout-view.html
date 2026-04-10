@@ -1,14 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="School Management Portal" />
-    <title>School Portal | School Managers</title>
-    <!-- Layout bootstrap/init -->
+    <meta name="description" content="School Portal Layout View" />
+    <title>Layout View</title>
+
     <script src="_LayoutScripts.js"></script>
 
-    <!-- Icons & Fonts -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +16,6 @@
           rel="stylesheet" />
     <link rel="stylesheet" href="_Layoutstyles.css" />
 </head>
-
 <body>
 <div class="app-wrapper">
 
@@ -309,7 +307,6 @@
                         <span class="nav-label">Platform Reports</span>
                     </a>
                 </li>
-
             </ul>
         </nav>
 
@@ -321,7 +318,6 @@
                 <div class="s-role">Administrator</div>
             </div>
         </div>
-
     </aside>
 
     <!-- Mobile backdrop -->
@@ -329,24 +325,18 @@
 
     <!-- MAIN CONTENT -->
     <div class="main-content" id="mainContent">
-
-        <!-- Top Navbar -->
         <header class="top-navbar">
-
             <button class="toggle-btn" id="sidebarToggleBtn" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">School Managers</h1>
+            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">Layout View</h1>
 
             <div class="nav-actions">
-
-                <!-- Search -->
                 <button class="icon-btn d-none d-md-flex" aria-label="Search">
                     <i class="fas fa-search"></i>
                 </button>
 
-                <!-- Role Preview -->
                 <div class="role-switcher" aria-label="Role preview">
                     <i class="fas fa-id-badge role-switcher-icon" aria-hidden="true"></i>
                     <label class="visually-hidden" for="rolePreviewSelect">Role preview</label>
@@ -361,7 +351,6 @@
                     </select>
                 </div>
 
-                <!-- Notifications -->
                 <div class="dropdown">
                     <button class="icon-btn" id="notifDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false"
@@ -411,7 +400,6 @@
                     </div>
                 </div>
 
-                <!-- Language Switcher -->
                 <div class="dropdown">
                     <button class="lang-btn" id="langDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false"
@@ -421,25 +409,12 @@
                         <i class="fas fa-chevron-down dropdown-chevron"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
-                        <li>
-                            <button class="dropdown-item" data-lang="en">
-                                English
-                            </button>
-                        </li>
-                        <li>
-                            <button class="dropdown-item" data-lang="fr">
-                                Fran&ccedil;ais
-                            </button>
-                        </li>
-                        <li>
-                            <button class="dropdown-item" data-lang="ar">
-                                &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;
-                            </button>
-                        </li>
+                        <li><button class="dropdown-item" data-lang="en">English</button></li>
+                        <li><button class="dropdown-item" data-lang="fr">Fran&ccedil;ais</button></li>
+                        <li><button class="dropdown-item" data-lang="ar">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</button></li>
                     </ul>
                 </div>
 
-                <!-- User Menu -->
                 <div class="dropdown">
                     <button class="user-btn" id="userDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false"
@@ -449,302 +424,27 @@
                         <i class="fas fa-chevron-down text-muted d-none d-lg-inline dropdown-chevron"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li>
-                            <a class="dropdown-item" href="profile.html">
-                                <i class="fas fa-user-circle me-2 text-muted"></i>My Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="settings.html">
-                                <i class="fas fa-cog me-2 text-muted"></i>Settings
-                            </a>
-                        </li>
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user-circle me-2 text-muted"></i>My Profile</a></li>
+                        <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog me-2 text-muted"></i>Settings</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <a class="dropdown-item text-danger" href="login.html">
-                                <i class="fas fa-sign-out-alt me-2"></i>Sign Out
-                            </a>
-                        </li>
+                        <li><a class="dropdown-item text-danger" href="login.html"><i class="fas fa-sign-out-alt me-2"></i>Sign Out</a></li>
                     </ul>
                 </div>
-
-            </div><!-- /.nav-actions -->
+            </div>
         </header>
 
-        <!--Content-->
         <main class="content-area" id="pageContent">
-
-            <!--
-                 Individual pages are rendered here.
-                 In ASP.NET Core MVC, replace this comment with:
-                     @RenderBody()
-                 For a static HTML demo, place your page HTML below.
-            -->
-
             <div class="page-title-row">
-                <h2 id="pageTitle">School Managers</h2>
-                <p class="page-lead">Monitor school manager accounts, review assignment status, and update manager access across all registered schools.</p>
+                <h2 id="pageTitle">Home Page</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="generalmanager-dashboard.html">General Manager</a></li>
-                        <li class="breadcrumb-item active" id="breadcrumbCurrent">School Managers</li>
+                        <li class="breadcrumb-item active" id="breadcrumbCurrent">Home Page</li>
                     </ol>
                 </nav>
             </div>
+        </main>
 
-            <section class="gm-toolbar-card mb-4" aria-label="Manager filters">
-                <div class="gm-toolbar-grid">
-                    <div>
-                        <label class="gm-field-label" for="managerSearchInput">Search managers</label>
-                        <div class="gm-search-wrap">
-                            <i class="fas fa-search gm-search-icon" aria-hidden="true"></i>
-                            <input id="managerSearchInput"
-                                   class="gm-search-input"
-                                   type="search"
-                                   placeholder="Search by manager name, school, email, or phone" />
-                        </div>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="managerStatusFilter">Status</label>
-                        <select id="managerStatusFilter" class="gm-filter-select">
-                            <option>All Statuses</option>
-                            <option>Active</option>
-                            <option>Pending</option>
-                            <option>Under Review</option>
-                            <option>Inactive</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="managerRegionFilter">Region</label>
-                        <select id="managerRegionFilter" class="gm-filter-select">
-                            <option>All Regions</option>
-                            <option>North District</option>
-                            <option>Central District</option>
-                            <option>South District</option>
-                            <option>Coastal District</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="managerSchoolFilter">School</label>
-                        <select id="managerSchoolFilter" class="gm-filter-select">
-                            <option>All Schools</option>
-                            <option>Bright Future Academy</option>
-                            <option>Green Valley High School</option>
-                            <option>Horizon Primary School</option>
-                            <option>Atlas International School</option>
-                        </select>
-                    </div>
-                    <div>
-                        <a class="gm-primary-btn" href="generalmanager-manager-accounts.html">
-                            <i class="fas fa-user-plus"></i>
-                            <span>Add Manager</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="gm-table-card" aria-labelledby="managersTableTitle">
-                <div class="gm-table-header">
-                    <div>
-                        <h3 class="gm-table-title" id="managersTableTitle">Manager Directory</h3>
-                        <p class="gm-table-subtitle">A full overview of school manager assignments, contact details, and current account status.</p>
-                    </div>
-                    <span class="gm-table-count">21 Managers</span>
-                </div>
-
-                <div class="gm-table-wrap">
-                    <table class="table gm-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Manager</th>
-                                <th scope="col">Assigned School</th>
-                                <th scope="col">Region</th>
-                                <th scope="col">Contact</th>
-                                <th scope="col">Last Active</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Laila Karim</div>
-                                            <div class="school-sub">Manager since 2023</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Bright Future Academy</div>
-                                    <div class="school-sub">SCH-1001</div>
-                                </td>
-                                <td>Central District</td>
-                                <td>
-                                    <div class="school-name">laila.karim@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 111 248</div>
-                                </td>
-                                <td>Today, 08:20</td>
-                                <td><span class="status-pill active">Active</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Omar Benali</div>
-                                            <div class="school-sub">Manager since 2022</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Green Valley High School</div>
-                                    <div class="school-sub">SCH-1015</div>
-                                </td>
-                                <td>North District</td>
-                                <td>
-                                    <div class="school-name">omar.benali@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 204 892</div>
-                                </td>
-                                <td>Today, 10:05</td>
-                                <td><span class="status-pill active">Active</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Sara El Idrissi</div>
-                                            <div class="school-sub">Awaiting onboarding approval</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Horizon Primary School</div>
-                                    <div class="school-sub">SCH-1044</div>
-                                </td>
-                                <td>Coastal District</td>
-                                <td>
-                                    <div class="school-name">sara.idrissi@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 318 514</div>
-                                </td>
-                                <td>Yesterday</td>
-                                <td><span class="status-pill pending">Pending</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Youssef Haddad</div>
-                                            <div class="school-sub">Documents under compliance review</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Atlas International School</div>
-                                    <div class="school-sub">SCH-1092</div>
-                                </td>
-                                <td>South District</td>
-                                <td>
-                                    <div class="school-name">youssef.haddad@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 442 638</div>
-                                </td>
-                                <td>Apr 3</td>
-                                <td><span class="status-pill review">Under Review</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="school-cell">
-                                        <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                        <div>
-                                            <div class="school-name">Nadia Rahimi</div>
-                                            <div class="school-sub">Account access paused</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="school-name">Sunrise Preparatory School</div>
-                                    <div class="school-sub">SCH-1120</div>
-                                </td>
-                                <td>Central District</td>
-                                <td>
-                                    <div class="school-name">nadia.rahimi@schoolportal.com</div>
-                                    <div class="school-sub">+212 600 533 421</div>
-                                </td>
-                                <td>Apr 1</td>
-                                <td><span class="status-pill inactive">Inactive</span></td>
-                                <td>
-                                    <div class="gm-actions">
-                                        <button class="gm-action-btn" type="button">
-                                            <i class="fas fa-pen-to-square"></i>
-                                            <span>Edit Details</span>
-                                        </button>
-                                        <button class="gm-action-btn delete" type="button">
-                                            <i class="fas fa-user-xmark"></i>
-                                            <span>Deactivate</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-        </main><!-- /.content-area -->
-
-        <!-- Footer -->
         <footer class="app-footer">
             <span>&copy; <span id="copyrightYear"></span> School Portal &mdash; All rights reserved.</span>
             <span>
@@ -753,17 +453,11 @@
                 <a href="support.html">Support</a>
             </span>
         </footer>
+    </div>
+</div>
 
-    </div><!-- /.main-content -->
-
-</div><!-- /.app-wrapper -->
-
- <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmwmCHCKPRZAqNzLIXMqe7tNnZLw"
         crossorigin="anonymous"></script>
-
-
 </body>
 </html>
-

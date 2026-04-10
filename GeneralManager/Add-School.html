@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="School Management Portal" />
-    <title>School Portal | Platform Reports</title>
+    <title>School Portal | Add New School</title>
     <!-- Layout bootstrap/init -->
-    <script src="_LayoutScripts.js"></script>
+    <script src="../_LayoutScripts.js"></script>
 
     <!-- Icons & Fonts -->
     <link rel="stylesheet"
@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet" />
-    <link rel="stylesheet" href="_Layoutstyles.css" />
+    <link rel="stylesheet" href="../_Layoutstyles.css" />
 </head>
 
 <body>
@@ -268,43 +268,43 @@
                 <!-- General Manager -->
                 <li data-role="generalmanager"><span class="nav-section-title">General Manager</span></li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-dashboard.html" class="nav-link" data-path="/generalmanager/dashboard">
+                    <a href="Dashboard.html" class="nav-link" data-path="/generalmanager/dashboard">
                         <i class="fas fa-sitemap nav-icon"></i>
                         <span class="nav-label">General Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-schools.html" class="nav-link" data-path="/generalmanager/schools">
+                    <a href="Schools.html" class="nav-link" data-path="/generalmanager/schools">
                         <i class="fas fa-school nav-icon"></i>
                         <span class="nav-label">Schools Directory</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-add-school.html" class="nav-link" data-path="/generalmanager/add-school">
+                    <a href="Add-School.html" class="nav-link" data-path="/generalmanager/add-school">
                         <i class="fas fa-square-plus nav-icon"></i>
                         <span class="nav-label">Add New School</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-school-lifecycle.html" class="nav-link" data-path="/generalmanager/school-lifecycle">
+                    <a href="Edit-Delete-School.html" class="nav-link" data-path="/generalmanager/school-lifecycle">
                         <i class="fas fa-trash-can nav-icon"></i>
                         <span class="nav-label">Edit / Delete Schools</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-school-managers.html" class="nav-link" data-path="/generalmanager/school-managers">
+                    <a href="School-Managers.html" class="nav-link" data-path="/generalmanager/school-managers">
                         <i class="fas fa-user-tie nav-icon"></i>
                         <span class="nav-label">School Managers</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-manager-accounts.html" class="nav-link" data-path="/generalmanager/manager-accounts">
+                    <a href="Create-Manager-Accounts.html" class="nav-link" data-path="/generalmanager/manager-accounts">
                         <i class="fas fa-user-plus nav-icon"></i>
                         <span class="nav-label">Create Manager Accounts</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="generalmanager-reports.html" class="nav-link" data-path="/generalmanager/reports">
+                    <a href="Reports.html" class="nav-link" data-path="/generalmanager/reports">
                         <i class="fas fa-chart-pie nav-icon"></i>
                         <span class="nav-label">Platform Reports</span>
                     </a>
@@ -337,7 +337,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">Platform Reports</h1>
+            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">Add New School</h1>
 
             <div class="nav-actions">
 
@@ -482,359 +482,292 @@
             -->
 
             <div class="page-title-row">
-                <h2 id="pageTitle">Platform Reports</h2>
-                <p class="page-lead">Review platform-wide reporting activity, generate exports, and monitor scheduled deliveries for schools, managers, and subscriptions.</p>
+                <h2 id="pageTitle">Add New School</h2>
+                <p class="page-lead">Create a new school profile, assign the first manager account, and define subscription dates and activation status from one setup form.</p>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                         <li class="breadcrumb-item"><a href="generalmanager-dashboard.html">General Manager</a></li>
-                        <li class="breadcrumb-item active" id="breadcrumbCurrent">Platform Reports</li>
+                        <li class="breadcrumb-item active" id="breadcrumbCurrent">Add New School</li>
                     </ol>
                 </nav>
             </div>
 
-            <section class="gm-kpi-grid mb-4" aria-label="Platform reports summary">
-                <article class="gm-kpi-card">
-                    <div class="gm-kpi-icon primary">
-                        <i class="fas fa-chart-column"></i>
-                    </div>
-                    <div>
-                        <div class="gm-kpi-label">Total Reports</div>
-                        <div class="gm-kpi-value">28</div>
-                        <div class="gm-kpi-trend positive">6 new templates added this month</div>
-                    </div>
-                </article>
-                <article class="gm-kpi-card">
-                    <div class="gm-kpi-icon success">
-                        <i class="fas fa-clock-rotate-left"></i>
-                    </div>
-                    <div>
-                        <div class="gm-kpi-label">Scheduled Reports</div>
-                        <div class="gm-kpi-value">9</div>
-                        <div class="gm-kpi-trend positive">All schedules synced successfully</div>
-                    </div>
-                </article>
-                <article class="gm-kpi-card">
-                    <div class="gm-kpi-icon warning">
-                        <i class="fas fa-file-export"></i>
-                    </div>
-                    <div>
-                        <div class="gm-kpi-label">Exports This Week</div>
-                        <div class="gm-kpi-value">54</div>
-                        <div class="gm-kpi-trend warning">High usage on school summary exports</div>
-                    </div>
-                </article>
-                <article class="gm-kpi-card">
-                    <div class="gm-kpi-icon danger">
-                        <i class="fas fa-circle-exclamation"></i>
-                    </div>
-                    <div>
-                        <div class="gm-kpi-label">Failed Deliveries</div>
-                        <div class="gm-kpi-value">2</div>
-                        <div class="gm-kpi-trend negative">Email retries pending for 2 reports</div>
-                    </div>
-                </article>
-            </section>
-
-            <section class="gm-toolbar-card mb-4" aria-label="Report filters">
-                <div class="gm-toolbar-grid">
-                    <div>
-                        <label class="gm-field-label" for="reportSearchInput">Search reports</label>
-                        <div class="gm-search-wrap">
-                            <i class="fas fa-search gm-search-icon" aria-hidden="true"></i>
-                            <input id="reportSearchInput"
-                                   class="gm-search-input"
-                                   type="search"
-                                   placeholder="Search by report name, category, owner, or format" />
+            <div class="gm-form-layout">
+                <div class="gm-form-stack">
+                    <section class="gm-form-card" aria-labelledby="schoolProfileTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="schoolProfileTitle">School Profile</h3>
+                            <p class="gm-form-card-subtitle">Basic identity details used for the school's public and internal portal profile.</p>
                         </div>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="reportCategoryFilter">Category</label>
-                        <select id="reportCategoryFilter" class="gm-filter-select">
-                            <option>All Categories</option>
-                            <option>School Performance</option>
-                            <option>Manager Activity</option>
-                            <option>Finance</option>
-                            <option>Subscriptions</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="reportScheduleFilter">Schedule</label>
-                        <select id="reportScheduleFilter" class="gm-filter-select">
-                            <option>All Schedules</option>
-                            <option>On Demand</option>
-                            <option>Daily</option>
-                            <option>Weekly</option>
-                            <option>Monthly</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="gm-field-label" for="reportFormatFilter">Format</label>
-                        <select id="reportFormatFilter" class="gm-filter-select">
-                            <option>All Formats</option>
-                            <option>PDF</option>
-                            <option>Excel</option>
-                            <option>CSV</option>
-                            <option>Dashboard View</option>
-                        </select>
-                    </div>
-                    <div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="SchoolName">SchoolName</label>
+                                <input class="gm-input" id="SchoolName" name="SchoolName" type="text" placeholder="Bright Future Academy" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="SchoolCode">SchoolCode</label>
+                                <input class="gm-input" id="SchoolCode" name="SchoolCode" type="text" placeholder="SCH-1201" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="SchoolType">SchoolType</label>
+                                <select class="gm-select" id="SchoolType" name="SchoolType">
+                                    <option value="">Select school type</option>
+                                    <option>Primary</option>
+                                    <option>Middle School</option>
+                                    <option>Secondary</option>
+                                    <option>K-12</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="EducationSystem">EducationSystem</label>
+                                <input class="gm-input" id="EducationSystem" name="EducationSystem" type="text" placeholder="National Curriculum" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="RegistrationNumber">RegistrationNumber</label>
+                                <input class="gm-input" id="RegistrationNumber" name="RegistrationNumber" type="text" placeholder="REG-2026-0045" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="EstablishedYear">EstablishedYear</label>
+                                <input class="gm-input" id="EstablishedYear" name="EstablishedYear" type="number" placeholder="2018" />
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-card" aria-labelledby="contactDetailsTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="contactDetailsTitle">Contact And Location</h3>
+                            <p class="gm-form-card-subtitle">School communication channels and location information for directory and reporting use.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="Email">Email</label>
+                                <input class="gm-input" id="Email" name="Email" type="email" placeholder="info@schoolportal.com" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="PhoneNumber">PhoneNumber</label>
+                                <input class="gm-input" id="PhoneNumber" name="PhoneNumber" type="tel" placeholder="+212 600 555 100" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="City">City</label>
+                                <input class="gm-input" id="City" name="City" type="text" placeholder="Casablanca" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="Region">Region</label>
+                                <select class="gm-select" id="Region" name="Region">
+                                    <option value="">Select region</option>
+                                    <option>Central District</option>
+                                    <option>North District</option>
+                                    <option>South District</option>
+                                    <option>Coastal District</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="Website">Website</label>
+                                <input class="gm-input" id="Website" name="Website" type="url" placeholder="https://www.schoolname.edu" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="StudentCapacity">StudentCapacity</label>
+                                <input class="gm-input" id="StudentCapacity" name="StudentCapacity" type="number" placeholder="1200" />
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="Address">Address</label>
+                                <textarea class="gm-textarea" id="Address" name="Address" placeholder="Street, district, and full campus address"></textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-card" aria-labelledby="managerAccountTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="managerAccountTitle">Primary Manager Account</h3>
+                            <p class="gm-form-card-subtitle">Set up the first school manager who will receive access once the school is created.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="ManagerFullName">ManagerFullName</label>
+                                <input class="gm-input" id="ManagerFullName" name="ManagerFullName" type="text" placeholder="Laila Karim" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="ManagerUserName">ManagerUserName</label>
+                                <input class="gm-input" id="ManagerUserName" name="ManagerUserName" type="text" placeholder="lkarim" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="ManagerEmail">ManagerEmail</label>
+                                <input class="gm-input" id="ManagerEmail" name="ManagerEmail" type="email" placeholder="manager@schoolportal.com" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="ManagerPhoneNumber">ManagerPhoneNumber</label>
+                                <input class="gm-input" id="ManagerPhoneNumber" name="ManagerPhoneNumber" type="tel" placeholder="+212 600 900 110" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="TemporaryPassword">TemporaryPassword</label>
+                                <input class="gm-input" id="TemporaryPassword" name="TemporaryPassword" type="text" placeholder="Temp@12345" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="PreferredLanguage">PreferredLanguage</label>
+                                <select class="gm-select" id="PreferredLanguage" name="PreferredLanguage">
+                                    <option value="">Select language</option>
+                                    <option>English</option>
+                                    <option>French</option>
+                                    <option>Arabic</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-card" aria-labelledby="subscriptionTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="subscriptionTitle">Subscription And Status</h3>
+                            <p class="gm-form-card-subtitle">Define commercial access dates, plan details, and whether the school should be active immediately.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="SubscriptionPlan">SubscriptionPlan</label>
+                                <select class="gm-select" id="SubscriptionPlan" name="SubscriptionPlan">
+                                    <option value="">Select plan</option>
+                                    <option>Starter</option>
+                                    <option>Standard</option>
+                                    <option>Premium</option>
+                                    <option>Enterprise</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="BillingCycle">BillingCycle</label>
+                                <select class="gm-select" id="BillingCycle" name="BillingCycle">
+                                    <option value="">Select billing cycle</option>
+                                    <option>Monthly</option>
+                                    <option>Quarterly</option>
+                                    <option>Yearly</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="SubscriptionStartDate">SubscriptionStartDate</label>
+                                <input class="gm-input" id="SubscriptionStartDate" name="SubscriptionStartDate" type="date" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="SubscriptionEndDate">SubscriptionEndDate</label>
+                                <input class="gm-input" id="SubscriptionEndDate" name="SubscriptionEndDate" type="date" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="MaxUsers">MaxUsers</label>
+                                <input class="gm-input" id="MaxUsers" name="MaxUsers" type="number" placeholder="75" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="MaxStudents">MaxStudents</label>
+                                <input class="gm-input" id="MaxStudents" name="MaxStudents" type="number" placeholder="1500" />
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="IsActive">IsActive</label>
+                                <label class="gm-switch" for="IsActive">
+                                    <input id="IsActive" name="IsActive" type="checkbox" checked />
+                                    <span class="gm-switch-slider" aria-hidden="true"></span>
+                                    <span class="gm-switch-copy">
+                                        <strong>School account is active</strong>
+                                        <small>Turn this off if the school should stay hidden until onboarding and payment are complete.</small>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="Notes">Notes</label>
+                                <textarea class="gm-textarea" id="Notes" name="Notes" placeholder="Add onboarding notes, implementation remarks, or special subscription instructions"></textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-actions" aria-label="Form actions">
                         <button class="gm-primary-btn" type="button">
-                            <i class="fas fa-play"></i>
-                            <span>Generate Report</span>
+                            <i class="fas fa-floppy-disk"></i>
+                            <span>Save School</span>
                         </button>
-                    </div>
-                </div>
-            </section>
-
-            <div class="row g-4">
-                <div class="col-xl-8">
-                    <section class="gm-table-card mb-4" aria-labelledby="approvalQueueTitle">
-                        <div class="gm-table-header">
-                            <div>
-                                <h3 class="gm-table-title" id="approvalQueueTitle">Report Library</h3>
-                                <p class="gm-table-subtitle">Saved platform reports available for on-demand generation or scheduled delivery.</p>
-                            </div>
-                            <span class="gm-table-count">28 Reports</span>
-                        </div>
-
-                        <div class="gm-table-wrap">
-                            <table class="table gm-table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Report</th>
-                                        <th scope="col">Category</th>
-                                        <th scope="col">Owner</th>
-                                        <th scope="col">Schedule</th>
-                                        <th scope="col">Format</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="school-cell">
-                                                <div class="school-logo"><i class="fas fa-chart-line"></i></div>
-                                                <div>
-                                                    <div class="school-name">School Performance Summary</div>
-                                                    <div class="school-sub">Enrollment, attendance, and academic trend overview</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="gm-meta">School Performance</span></td>
-                                        <td>General Admin Team</td>
-                                        <td><span class="status-pill active">Weekly</span></td>
-                                        <td>PDF</td>
-                                        <td>
-                                            <div class="gm-actions">
-                                                <button class="gm-action-btn" type="button">
-                                                    <i class="fas fa-play"></i>
-                                                    <span>Run Now</span>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="school-cell">
-                                                <div class="school-logo"><i class="fas fa-user-tie"></i></div>
-                                                <div>
-                                                    <div class="school-name">Manager Activity Audit</div>
-                                                    <div class="school-sub">Login activity, profile changes, and access review</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="gm-meta">Manager Activity</span></td>
-                                        <td>Security Office</td>
-                                        <td><span class="status-pill review">Monthly</span></td>
-                                        <td>Excel</td>
-                                        <td>
-                                            <div class="gm-actions">
-                                                <button class="gm-action-btn" type="button">
-                                                    <i class="fas fa-play"></i>
-                                                    <span>Run Now</span>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="school-cell">
-                                                <div class="school-logo"><i class="fas fa-wallet"></i></div>
-                                                <div>
-                                                    <div class="school-name">Subscription Revenue Report</div>
-                                                    <div class="school-sub">Plan status, renewals, and revenue movement</div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span class="gm-meta">Subscriptions</span></td>
-                                        <td>Finance Team</td>
-                                        <td><span class="status-pill pending">On Demand</span></td>
-                                        <td>CSV</td>
-                                        <td>
-                                            <div class="gm-actions">
-                                                <button class="gm-action-btn" type="button">
-                                                    <i class="fas fa-play"></i>
-                                                    <span>Run Now</span>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-
-                    <section class="gm-table-card" aria-labelledby="activityFeedTitle">
-                        <div class="gm-table-header">
-                            <div>
-                                <h3 class="gm-table-title" id="activityFeedTitle">Recent Exports</h3>
-                                <p class="gm-table-subtitle">The latest generated files and delivery results across the platform.</p>
-                            </div>
-                            <span class="gm-table-count">Last 7 Days</span>
-                        </div>
-
-                        <div class="gm-table-wrap">
-                            <table class="table gm-table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Report</th>
-                                        <th scope="col">Requested By</th>
-                                        <th scope="col">Delivery</th>
-                                        <th scope="col">Time</th>
-                                        <th scope="col">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="school-name">School Performance Summary</div>
-                                            <div class="school-sub">Sent to school leadership and general manager inbox</div>
-                                        </td>
-                                        <td>General Admin Team</td>
-                                        <td>Email + PDF</td>
-                                        <td>08:45</td>
-                                        <td><span class="status-pill active">Completed</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="school-name">Manager Activity Audit</div>
-                                            <div class="school-sub">Export queued for monthly compliance review</div>
-                                        </td>
-                                        <td>Security Office</td>
-                                        <td>Excel Download</td>
-                                        <td>Yesterday</td>
-                                        <td><span class="status-pill review">In Review</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="school-name">Subscription Revenue Report</div>
-                                            <div class="school-sub">Delivery failed because of finance mailbox rejection</div>
-                                        </td>
-                                        <td>Finance Team</td>
-                                        <td>CSV Email</td>
-                                        <td>Apr 3</td>
-                                        <td><span class="status-pill inactive">Attention</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <button class="gm-action-btn delete" type="button">
+                            <i class="fas fa-xmark"></i>
+                            <span>Cancel</span>
+                        </button>
                     </section>
                 </div>
 
-                <div class="col-xl-4">
-                    <section class="gm-panel-card mb-4" aria-labelledby="quickActionsTitle">
+                <aside class="gm-form-sidebar">
+                    <section class="gm-panel-card mb-4" aria-labelledby="setupChecklistTitle">
                         <div class="gm-panel-header">
-                            <h3 class="gm-panel-title" id="quickActionsTitle">Quick Actions</h3>
-                            <p class="gm-panel-subtitle">Jump into the most common reporting tasks.</p>
-                        </div>
-                        <div class="gm-quick-actions">
-                            <a class="gm-quick-action" href="generalmanager-schools.html">
-                                <span class="gm-quick-action-icon"><i class="fas fa-chart-column"></i></span>
-                                <span>
-                                    <strong>School Reports</strong>
-                                    <small>Review school-level records before exporting</small>
-                                </span>
-                            </a>
-                            <a class="gm-quick-action" href="generalmanager-school-managers.html">
-                                <span class="gm-quick-action-icon"><i class="fas fa-user-tie"></i></span>
-                                <span>
-                                    <strong>Manager Reports</strong>
-                                    <small>Open manager data before running activity exports</small>
-                                </span>
-                            </a>
-                            <a class="gm-quick-action" href="generalmanager-manager-accounts.html">
-                                <span class="gm-quick-action-icon"><i class="fas fa-file-export"></i></span>
-                                <span>
-                                    <strong>Create Report Recipient</strong>
-                                    <small>Add manager accounts before assigning scheduled reports</small>
-                                </span>
-                            </a>
-                        </div>
-                    </section>
-
-                    <section class="gm-panel-card mb-4" aria-labelledby="statusOverviewTitle">
-                        <div class="gm-panel-header">
-                            <h3 class="gm-panel-title" id="statusOverviewTitle">Report Categories</h3>
-                            <p class="gm-panel-subtitle">Distribution of saved report templates by reporting area.</p>
+                            <h3 class="gm-panel-title" id="setupChecklistTitle">Setup Checklist</h3>
+                            <p class="gm-panel-subtitle">Recommended items before publishing the school.</p>
                         </div>
                         <div class="gm-status-list">
                             <div class="gm-status-row">
-                                <span class="gm-status-label"><span class="status-pill active">Schools</span> School Performance</span>
-                                <strong>10</strong>
+                                <span class="gm-status-label"><span class="status-pill review">1</span> School profile completed</span>
                             </div>
                             <div class="gm-status-row">
-                                <span class="gm-status-label"><span class="status-pill pending">Managers</span> Manager Activity</span>
-                                <strong>7</strong>
+                                <span class="gm-status-label"><span class="status-pill review">2</span> Manager account assigned</span>
                             </div>
                             <div class="gm-status-row">
-                                <span class="gm-status-label"><span class="status-pill review">Finance</span> Revenue And Fees</span>
-                                <strong>6</strong>
+                                <span class="gm-status-label"><span class="status-pill review">3</span> Subscription dates confirmed</span>
                             </div>
                             <div class="gm-status-row">
-                                <span class="gm-status-label"><span class="status-pill inactive">Other</span> Subscriptions And Ops</span>
-                                <strong>5</strong>
+                                <span class="gm-status-label"><span class="status-pill review">4</span> Activation status reviewed</span>
                             </div>
                         </div>
                     </section>
 
-                    <section class="gm-panel-card" aria-labelledby="regionOverviewTitle">
+                    <section class="gm-panel-card mb-4" aria-labelledby="defaultFeaturesTitle">
                         <div class="gm-panel-header">
-                            <h3 class="gm-panel-title" id="regionOverviewTitle">Delivery Status</h3>
-                            <p class="gm-panel-subtitle">Current report delivery health across all export channels.</p>
+                            <h3 class="gm-panel-title" id="defaultFeaturesTitle">Default Features</h3>
+                            <p class="gm-panel-subtitle">Suggested modules to enable for newly created schools.</p>
                         </div>
                         <div class="gm-region-list">
                             <div class="gm-region-row">
                                 <div>
-                                    <strong>Email Delivery</strong>
-                                    <small>38 successful deliveries this week</small>
+                                    <strong>Attendance Tracking</strong>
+                                    <small>Daily student and staff attendance</small>
                                 </div>
-                                <span class="gm-meta">Healthy</span>
+                                <span class="gm-meta">Enabled</span>
                             </div>
                             <div class="gm-region-row">
                                 <div>
-                                    <strong>Excel Downloads</strong>
-                                    <small>11 manual exports generated</small>
+                                    <strong>Parent Portal</strong>
+                                    <small>Family access to grades and notices</small>
                                 </div>
-                                <span class="gm-meta">Stable</span>
+                                <span class="gm-meta">Enabled</span>
                             </div>
                             <div class="gm-region-row">
                                 <div>
-                                    <strong>CSV Jobs</strong>
-                                    <small>2 deliveries need retry handling</small>
+                                    <strong>Finance Module</strong>
+                                    <small>Fees, billing, and payment follow-up</small>
                                 </div>
-                                <span class="gm-meta">Warning</span>
-                            </div>
-                            <div class="gm-region-row">
-                                <div>
-                                    <strong>Dashboard Views</strong>
-                                    <small>Most-used format for live reporting</small>
-                                </div>
-                                <span class="gm-meta">Popular</span>
+                                <span class="gm-meta">Optional</span>
                             </div>
                         </div>
                     </section>
-                </div>
+
+                    <section class="gm-panel-card" aria-labelledby="summaryTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="summaryTitle">What Gets Created</h3>
+                            <p class="gm-panel-subtitle">The system will prepare the following records when you save.</p>
+                        </div>
+                        <div class="gm-quick-actions">
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-school"></i></span>
+                                <span>
+                                    <strong>School Record</strong>
+                                    <small>Main school profile, directory data, and capacity details</small>
+                                </span>
+                            </div>
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-user-tie"></i></span>
+                                <span>
+                                    <strong>Manager Account</strong>
+                                    <small>Primary login and administrative permissions</small>
+                                </span>
+                            </div>
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-calendar-check"></i></span>
+                                <span>
+                                    <strong>Subscription Record</strong>
+                                    <small>Plan, dates, limits, and activation state</small>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
             </div>
 
         </main><!-- /.content-area -->

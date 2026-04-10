@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="School Management Portal" />
-    <title>School Portal</title>
+    <title>School Portal | Create Manager Accounts</title>
     <!-- Layout bootstrap/init -->
-    <script src="_LayoutScripts.js"></script>
+    <script src="../_LayoutScripts.js"></script>
 
     <!-- Icons & Fonts -->
     <link rel="stylesheet"
@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet" />
-    <link rel="stylesheet" href="_Layoutstyles.css" />
+    <link rel="stylesheet" href="../_Layoutstyles.css" />
 </head>
 
 <body>
@@ -268,43 +268,43 @@
                 <!-- General Manager -->
                 <li data-role="generalmanager"><span class="nav-section-title">General Manager</span></li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="GeneralManager/Dashboard.html" class="nav-link" data-path="/generalmanager/dashboard">
+                    <a href="Dashboard.html" class="nav-link" data-path="/generalmanager/dashboard">
                         <i class="fas fa-sitemap nav-icon"></i>
                         <span class="nav-label">General Dashboard</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="GeneralManager/Schools.html" class="nav-link" data-path="/generalmanager/schools">
+                    <a href="Schools.html" class="nav-link" data-path="/generalmanager/schools">
                         <i class="fas fa-school nav-icon"></i>
                         <span class="nav-label">Schools Directory</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="GeneralManager/Add-School.html" class="nav-link" data-path="/generalmanager/add-school">
+                    <a href="Add-School.html" class="nav-link" data-path="/generalmanager/add-school">
                         <i class="fas fa-square-plus nav-icon"></i>
                         <span class="nav-label">Add New School</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="GeneralManager/Edit-Delete-School.html" class="nav-link" data-path="/generalmanager/school-lifecycle">
+                    <a href="Edit-Delete-School.html" class="nav-link" data-path="/generalmanager/school-lifecycle">
                         <i class="fas fa-trash-can nav-icon"></i>
-                        <span class="nav-label">Edit / Delete School</span>
+                        <span class="nav-label">Edit / Delete Schools</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="GeneralManager/School-Managers.html" class="nav-link" data-path="/generalmanager/school-managers">
+                    <a href="School-Managers.html" class="nav-link" data-path="/generalmanager/school-managers">
                         <i class="fas fa-user-tie nav-icon"></i>
                         <span class="nav-label">School Managers</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="GeneralManager/Create-Manager-Accounts.html" class="nav-link" data-path="/generalmanager/manager-accounts">
+                    <a href="Create-Manager-Accounts.html" class="nav-link" data-path="/generalmanager/manager-accounts">
                         <i class="fas fa-user-plus nav-icon"></i>
                         <span class="nav-label">Create Manager Accounts</span>
                     </a>
                 </li>
                 <li class="nav-item" data-role="generalmanager">
-                    <a href="GeneralManager/Reports.html" class="nav-link" data-path="/generalmanager/reports">
+                    <a href="Reports.html" class="nav-link" data-path="/generalmanager/reports">
                         <i class="fas fa-chart-pie nav-icon"></i>
                         <span class="nav-label">Platform Reports</span>
                     </a>
@@ -337,7 +337,7 @@
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">Dashboard</h1>
+            <h1 class="page-heading-sm d-none d-sm-block" id="pageHeading">Create Manager Accounts</h1>
 
             <div class="nav-actions">
 
@@ -482,71 +482,288 @@
             -->
 
             <div class="page-title-row">
-                <h2 id="pageTitle">Dashboard</h2>
+                <h2 id="pageTitle">Create Manager Accounts</h2>
+                <p class="page-lead">Create a school manager account, choose the assigned school from a dropdown list, and configure login, access, and activation settings.</p>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" id="breadcrumbCurrent">Dashboard</li>
+                        <li class="breadcrumb-item"><a href="generalmanager-dashboard.html">General Manager</a></li>
+                        <li class="breadcrumb-item active" id="breadcrumbCurrent">Create Manager Accounts</li>
                     </ol>
                 </nav>
             </div>
 
-            <!-- Sample placeholder cards -->
-            <div class="row g-3">
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm rounded-3 p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon stat-icon-students">
-                                <i class="fas fa-user-graduate"></i>
+            <div class="gm-form-layout">
+                <div class="gm-form-stack">
+                    <section class="gm-form-card" aria-labelledby="schoolProfileTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="schoolProfileTitle">School Assignment</h3>
+                            <p class="gm-form-card-subtitle">Choose the school this account will manage and capture the core account identity details.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="AssignedSchool">AssignedSchool</label>
+                                <select class="gm-select" id="AssignedSchool" name="AssignedSchool">
+                                    <option value="">Select school</option>
+                                    <option>Bright Future Academy</option>
+                                    <option>Green Valley High School</option>
+                                    <option>Horizon Primary School</option>
+                                    <option>Atlas International School</option>
+                                    <option>Sunrise Preparatory School</option>
+                                </select>
                             </div>
                             <div>
-                                <div class="text-muted stat-label">Total Students</div>
-                                <div class="fw-bold fs-5">1,248</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm rounded-3 p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon stat-icon-teachers">
-                                <i class="fas fa-chalkboard-teacher"></i>
+                                <label class="gm-field-label" for="Role">Role</label>
+                                <select class="gm-select" id="Role" name="Role">
+                                    <option value="">Select role</option>
+                                    <option selected>School Manager</option>
+                                </select>
                             </div>
                             <div>
-                                <div class="text-muted stat-label">Total Teachers</div>
-                                <div class="fw-bold fs-5">84</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm rounded-3 p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon stat-icon-classes">
-                                <i class="fas fa-door-open"></i>
+                                <label class="gm-field-label" for="ManagerFullName">ManagerFullName</label>
+                                <input class="gm-input" id="ManagerFullName" name="ManagerFullName" type="text" placeholder="Laila Karim" />
                             </div>
                             <div>
-                                <div class="text-muted stat-label">Active Classes</div>
-                                <div class="fw-bold fs-5">36</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xl-3">
-                    <div class="card border-0 shadow-sm rounded-3 p-3">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="stat-icon stat-icon-absent">
-                                <i class="fas fa-clipboard-check"></i>
+                                <label class="gm-field-label" for="ManagerUserName">ManagerUserName</label>
+                                <input class="gm-input" id="ManagerUserName" name="ManagerUserName" type="text" placeholder="lkarim" />
                             </div>
                             <div>
-                                <div class="text-muted stat-label">Absent Today</div>
-                                <div class="fw-bold fs-5">3</div>
+                                <label class="gm-field-label" for="EmployeeCode">EmployeeCode</label>
+                                <input class="gm-input" id="EmployeeCode" name="EmployeeCode" type="text" placeholder="MGR-2048" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="PreferredLanguage">PreferredLanguage</label>
+                                <select class="gm-select" id="PreferredLanguage" name="PreferredLanguage">
+                                    <option value="">Select language</option>
+                                    <option>English</option>
+                                    <option>French</option>
+                                    <option>Arabic</option>
+                                </select>
                             </div>
                         </div>
-                    </div>
+                    </section>
+
+                    <section class="gm-form-card" aria-labelledby="contactDetailsTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="contactDetailsTitle">Contact Details</h3>
+                            <p class="gm-form-card-subtitle">Add the contact channels that will be used for sign-in, notifications, and account recovery.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="ManagerEmail">ManagerEmail</label>
+                                <input class="gm-input" id="ManagerEmail" name="ManagerEmail" type="email" placeholder="manager@schoolportal.com" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="ManagerPhoneNumber">ManagerPhoneNumber</label>
+                                <input class="gm-input" id="ManagerPhoneNumber" name="ManagerPhoneNumber" type="tel" placeholder="+212 600 900 110" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="AlternatePhoneNumber">AlternatePhoneNumber</label>
+                                <input class="gm-input" id="AlternatePhoneNumber" name="AlternatePhoneNumber" type="tel" placeholder="+212 600 800 220" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="WorkLocation">WorkLocation</label>
+                                <input class="gm-input" id="WorkLocation" name="WorkLocation" type="text" placeholder="Main Campus Office" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="EmergencyContactName">EmergencyContactName</label>
+                                <input class="gm-input" id="EmergencyContactName" name="EmergencyContactName" type="text" placeholder="Fatima Karim" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="EmergencyContactPhone">EmergencyContactPhone</label>
+                                <input class="gm-input" id="EmergencyContactPhone" name="EmergencyContactPhone" type="tel" placeholder="+212 600 112 345" />
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="AccountNotes">AccountNotes</label>
+                                <textarea class="gm-textarea" id="AccountNotes" name="AccountNotes" placeholder="Add contact notes, onboarding remarks, or recovery information"></textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-card" aria-labelledby="managerAccountTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="managerAccountTitle">Credentials And Access</h3>
+                            <p class="gm-form-card-subtitle">Configure how the manager signs in and what level of platform access they will receive.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="TemporaryPassword">TemporaryPassword</label>
+                                <input class="gm-input" id="TemporaryPassword" name="TemporaryPassword" type="text" placeholder="Temp@12345" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="ConfirmPassword">ConfirmPassword</label>
+                                <input class="gm-input" id="ConfirmPassword" name="ConfirmPassword" type="text" placeholder="Re-enter temporary password" />
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="AccessLevel">AccessLevel</label>
+                                <select class="gm-select" id="AccessLevel" name="AccessLevel">
+                                    <option value="">Select access level</option>
+                                    <option>Standard Manager</option>
+                                    <option>Senior Manager</option>
+                                    <option>Restricted Manager</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="AccessStartDate">AccessStartDate</label>
+                                <input class="gm-input" id="AccessStartDate" name="AccessStartDate" type="date" />
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="RequirePasswordChange">RequirePasswordChange</label>
+                                <label class="gm-switch" for="RequirePasswordChange">
+                                    <input id="RequirePasswordChange" name="RequirePasswordChange" type="checkbox" checked />
+                                    <span class="gm-switch-slider" aria-hidden="true"></span>
+                                    <span class="gm-switch-copy">
+                                        <strong>Force password change on first login</strong>
+                                        <small>Recommended for every newly created school manager account.</small>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-card" aria-labelledby="subscriptionTitle">
+                        <div class="gm-form-card-header">
+                            <h3 class="gm-form-card-title" id="subscriptionTitle">Account Status And Notifications</h3>
+                            <p class="gm-form-card-subtitle">Control whether the account is active immediately and how the onboarding message should be delivered.</p>
+                        </div>
+                        <div class="gm-form-grid">
+                            <div>
+                                <label class="gm-field-label" for="InvitationMethod">InvitationMethod</label>
+                                <select class="gm-select" id="InvitationMethod" name="InvitationMethod">
+                                    <option value="">Select invitation method</option>
+                                    <option>Email</option>
+                                    <option>SMS</option>
+                                    <option>Both Email And SMS</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="gm-field-label" for="OnboardingDeadline">OnboardingDeadline</label>
+                                <input class="gm-input" id="OnboardingDeadline" name="OnboardingDeadline" type="date" />
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="IsActive">IsActive</label>
+                                <label class="gm-switch" for="IsActive">
+                                    <input id="IsActive" name="IsActive" type="checkbox" checked />
+                                    <span class="gm-switch-slider" aria-hidden="true"></span>
+                                    <span class="gm-switch-copy">
+                                        <strong>Manager account is active</strong>
+                                        <small>Turn this off if the account should be created first and activated later by the general management team.</small>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="SendWelcomeEmail">SendWelcomeEmail</label>
+                                <label class="gm-switch" for="SendWelcomeEmail">
+                                    <input id="SendWelcomeEmail" name="SendWelcomeEmail" type="checkbox" checked />
+                                    <span class="gm-switch-slider" aria-hidden="true"></span>
+                                    <span class="gm-switch-copy">
+                                        <strong>Send welcome instructions immediately</strong>
+                                        <small>Includes login details, school assignment, and first-step guidance for the new manager.</small>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="gm-field-span-2">
+                                <label class="gm-field-label" for="Notes">Notes</label>
+                                <textarea class="gm-textarea" id="Notes" name="Notes" placeholder="Add onboarding notes, approval remarks, or account-creation instructions"></textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-form-actions" aria-label="Form actions">
+                        <button class="gm-primary-btn" type="button">
+                            <i class="fas fa-floppy-disk"></i>
+                            <span>Create Manager Account</span>
+                        </button>
+                        <button class="gm-action-btn delete" type="button">
+                            <i class="fas fa-xmark"></i>
+                            <span>Cancel</span>
+                        </button>
+                    </section>
                 </div>
+
+                <aside class="gm-form-sidebar">
+                    <section class="gm-panel-card mb-4" aria-labelledby="setupChecklistTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="setupChecklistTitle">Account Checklist</h3>
+                            <p class="gm-panel-subtitle">Recommended checks before creating a new school manager account.</p>
+                        </div>
+                        <div class="gm-status-list">
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">1</span> School selected from dropdown</span>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">2</span> Manager identity completed</span>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">3</span> Password and access level confirmed</span>
+                            </div>
+                            <div class="gm-status-row">
+                                <span class="gm-status-label"><span class="status-pill review">4</span> Activation and invitation settings reviewed</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-panel-card mb-4" aria-labelledby="defaultFeaturesTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="defaultFeaturesTitle">Manager Permissions</h3>
+                            <p class="gm-panel-subtitle">Typical responsibilities this account may receive once activated.</p>
+                        </div>
+                        <div class="gm-region-list">
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>Academic Oversight</strong>
+                                    <small>Manage schedules, classes, and school operations</small>
+                                </div>
+                                <span class="gm-meta">Core</span>
+                            </div>
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>Teacher Coordination</strong>
+                                    <small>Review staff activity and school-level requests</small>
+                                </div>
+                                <span class="gm-meta">Core</span>
+                            </div>
+                            <div class="gm-region-row">
+                                <div>
+                                    <strong>Reporting Access</strong>
+                                    <small>Open operational dashboards and school summaries</small>
+                                </div>
+                                <span class="gm-meta">Optional</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="gm-panel-card" aria-labelledby="summaryTitle">
+                        <div class="gm-panel-header">
+                            <h3 class="gm-panel-title" id="summaryTitle">What Gets Created</h3>
+                            <p class="gm-panel-subtitle">The platform will prepare the following records when you save the account.</p>
+                        </div>
+                        <div class="gm-quick-actions">
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-school"></i></span>
+                                <span>
+                                    <strong>Manager Login</strong>
+                                    <small>Username, password rules, and access profile</small>
+                                </span>
+                            </div>
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-user-tie"></i></span>
+                                <span>
+                                    <strong>School Assignment</strong>
+                                    <small>Links the account to the selected school from the dropdown</small>
+                                </span>
+                            </div>
+                            <div class="gm-quick-action">
+                                <span class="gm-quick-action-icon"><i class="fas fa-calendar-check"></i></span>
+                                <span>
+                                    <strong>Invitation Workflow</strong>
+                                    <small>Activation state and onboarding notification preferences</small>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
             </div>
-            <!-- /sample cards -->
 
         </main><!-- /.content-area -->
 

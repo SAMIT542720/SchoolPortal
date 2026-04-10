@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign in to School Portal — Management System" />
+    <title>Sign in | School Portal</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+    <div class="login-lang-wrap">
+        <div class="login-lang">
+            <button type="button" class="lang-trigger" id="langMenuBtn"
+                    aria-expanded="false" aria-haspopup="listbox" aria-controls="langMenuList">
+                <span class="lang-flag" id="langFlag" aria-hidden="true">&#x1F1EC;&#x1F1E7;</span>
+                <span id="langCode">EN</span>
+                <i class="fas fa-chevron-down chev" aria-hidden="true"></i>
+                <span class="visually-hidden" id="langMenuLabel">Language</span>
+            </button>
+            <ul class="lang-menu" id="langMenuList" role="listbox" aria-labelledby="langMenuLabel" hidden>
+                <li role="presentation">
+                    <button type="button" role="option" data-lang="en" data-flag="&#x1F1EC;&#x1F1E7;" data-code="EN">
+                        <span class="lang-flag" aria-hidden="true">&#x1F1EC;&#x1F1E7;</span>
+                        <span data-i18n-label="langEn">English</span>
+                    </button>
+                </li>
+                <li role="presentation">
+                    <button type="button" role="option" data-lang="fr" data-flag="&#x1F1EB;&#x1F1F7;" data-code="FR">
+                        <span class="lang-flag" aria-hidden="true">&#x1F1EB;&#x1F1F7;</span>
+                        <span data-i18n-label="langFr">Français</span>
+                    </button>
+                </li>
+                <li role="presentation">
+                    <button type="button" role="option" data-lang="ar" data-flag="&#x1F1F8;&#x1F1E6;" data-code="AR">
+                        <span class="lang-flag" aria-hidden="true">&#x1F1F8;&#x1F1E6;</span>
+                        <span data-i18n-label="langAr">العربية</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--Login page content-->
+    <div class="login-shell">
+        <div class="login-shell-bg" aria-hidden="true">
+            <div class="shell-blob shell-blob-a"></div>
+            <div class="shell-blob shell-blob-b"></div>
+            <div class="shell-blob shell-blob-c"></div>
+            <div class="shell-blob shell-blob-d"></div>
+            <div class="shell-shimmer"></div>
+            <div class="shell-mesh"></div>
+        </div>
+        <section class="login-hero" id="loginHeroSection" aria-label="Welcome">
+            <a href="index.html" class="hero-brand">
+                <span class="hero-brand-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+                <span class="hero-brand-text">
+                    <span data-i18n="brandTitle">School Portal</span>
+                    <small data-i18n="brandSub">Management System</small>
+                </span>
+            </a>
+            <div class="hero-body">
+                <h2 class="hero-title" data-i18n="heroTitle">One place for your school community</h2>
+                <p class="hero-lead" data-i18n="heroLead">
+                    Students, teachers, parents, and administrators stay connected with schedules, grades, attendance, and reports in a single secure workspace.
+                </p>
+                <ul class="hero-features">
+                    <li>
+                        <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                        <span data-i18n="feat1">Role-based access so everyone sees what they need—nothing more.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        <span data-i18n="feat2">Dashboards and reports that keep leadership and staff aligned.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-comments" aria-hidden="true"></i>
+                        <span data-i18n="feat3">Built for daily use: messages, calendar, and settings at your fingertips.</span>
+                    </li>
+                </ul>
+            </div>
+            <p class="hero-foot" id="footerLine"></p>
+        </section>
+        <!--Login section-->
+        <section class="login-panel">
+            <div class="login-card">
+                <h1 data-i18n="welcome">Welcome back</h1>
+                <p class="subtitle" data-i18n="subtitle">Sign in with your school account to continue.</p>
+                <div class="weather-widget weather-loading" id="weatherWidget" aria-live="polite">
+                    <div class="weather-scene" id="weatherScene" aria-hidden="true">
+                        <span class="weather-sun"></span>
+                        <span class="weather-cloud weather-cloud-a"></span>
+                        <span class="weather-cloud weather-cloud-b"></span>
+                        <span class="weather-rain weather-rain-a"></span>
+                        <span class="weather-rain weather-rain-b"></span>
+                        <span class="weather-rain weather-rain-c"></span>
+                    </div>
+                    <div class="weather-info">
+                        <p class="weather-location" data-i18n="weatherLocation">N'Djamena, Chad</p>
+                        <p class="weather-status" id="weatherStatus" data-i18n="weatherLoading">Loading weather...</p>
+                    </div>
+                </div>
+
+                <form action="index.html" method="get" id="loginForm">
+                    <div class="field">
+                        <label for="email" data-i18n="emailLabel">Email or username</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-envelope input-icon" aria-hidden="true"></i>
+                            <input type="text" id="email" name="email" autocomplete="username"
+                                   data-i18n-placeholder="emailPh"
+                                   placeholder="you@school.edu" required />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="password" data-i18n="passLabel">Password</label>
+                        <div class="input-wrap password-toggle">
+                            <i class="fas fa-lock input-icon" aria-hidden="true"></i>
+                            <input type="password" id="password" name="password" autocomplete="current-password"
+                                   data-i18n-placeholder="passPh"
+                                   placeholder="Enter your password" required />
+                            <button type="button" class="toggle-visibility" id="togglePw"
+                                    data-i18n-aria-show="showPass"
+                                    data-i18n-aria-hide="hidePass"
+                                    aria-label="Show password" aria-pressed="false">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row-inline">
+                        <label class="remember">
+                            <input type="checkbox" name="remember" value="1" />
+                            <span data-i18n="remember">Remember me</span>
+                        </label>
+                        <a class="forgot" href="#" data-i18n="forgot">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn-signin" data-i18n="signin">Sign in</button>
+                </form>
+
+                <div class="login-divider" data-i18n="divider">or</div>
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    <span data-i18n="backHome">Back to portal home</span>
+                </a>
+
+                <p class="demo-hint">
+                    <strong data-i18n="demoStrong">Static demo:</strong>
+                    <span data-i18n="demoRest"> submitting the form opens the portal home. Wire this form to your real authentication when you connect a backend.</span>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
