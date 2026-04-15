@@ -1558,14 +1558,23 @@ body.mobile-friendly-view .gm-table-wrap {
     }
 
     body.mobile-friendly-view .lang-btn {
-        padding: 0.2rem 0.42rem;
-        gap: 0.2rem;
+        min-width: 3.2rem;
+        padding: 0.2rem 0.48rem;
+        gap: 0.3rem;
+        border-color: #cbd5e1;
+        background: #f8fafc;
+        color: #1f2937;
         font-size: 0.7rem;
+        font-weight: 700;
     }
 
-    body.mobile-friendly-view .lang-btn #langFlag,
-    body.mobile-friendly-view .lang-btn .dropdown-chevron {
+    body.mobile-friendly-view .lang-btn #langFlag {
         display: none;
+    }
+
+    body.mobile-friendly-view .lang-btn .dropdown-chevron {
+        display: inline-block;
+        color: #64748b;
     }
 
     body.mobile-friendly-view .user-btn {
@@ -1791,13 +1800,17 @@ body.mobile-friendly-view .gm-table-wrap {
         padding-inline: 0.35rem;
     }
 
-    body.mobile-friendly-view .role-switcher-icon,
-    body.mobile-friendly-view .lang-btn #langCode {
+    body.mobile-friendly-view .role-switcher-icon {
         display: none;
     }
 
     body.mobile-friendly-view .lang-btn {
-        padding-inline: 0.35rem;
+        min-width: 3rem;
+        padding-inline: 0.42rem;
+    }
+
+    body.mobile-friendly-view .lang-btn .dropdown-chevron {
+        font-size: 0.55rem;
     }
 
     body.mobile-friendly-view .icon-btn {
