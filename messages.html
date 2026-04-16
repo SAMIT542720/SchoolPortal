@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html dir="ltr" lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="School Management Portal Messages" />
     <title>School Portal | Messages</title>
-    <script src="_LayoutScripts.js"></script>
+    <script src="Scripts/_LayoutScripts.js"></script>
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -206,14 +206,8 @@
     </div>
 </template>
 
-<script src="_RootPageShell.js"></script>
-<script>
-    SchoolPortalRootShell.render({
-        pageHeading: 'Messages',
-        activePath: '/messages',
-        templateId: 'messagesViewTemplate'
-    });
-</script>
+<script src="Scripts/_RootPageShell.js"></script>
+<script src="Scripts/messages-page.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmwmCHCKPRZAqNzLIXMqe7tNnZLw"
         crossorigin="anonymous"></script>

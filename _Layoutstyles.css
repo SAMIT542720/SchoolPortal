@@ -1,3 +1,8 @@
+/* ==========================================================================
+   BEGIN: Shared app shell styles (all pages)
+   Includes global tokens, body defaults, sidebar, top navbar, notifications, and page lead.
+   ========================================================================== */
+
 :root {
     --sidebar-w: 260px;
     --sidebar-w-sm: 70px;
@@ -566,6 +571,16 @@ a {
     color: #6c757d;
     font-size: 0.88rem;
 }
+
+/* ==========================================================================
+   END: Shared app shell styles (all pages)
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: Shared data, card, table, and form components (role pages)
+   Used by GeneralManager/Schools.html and other GeneralManager, SchoolManager,
+   Teacher, Student, Parent, and Counselor pages.
+   ========================================================================== */
 
 .gm-toolbar-card,
 .gm-table-card {
@@ -1167,6 +1182,14 @@ a {
     line-height: 1.45;
 }
 
+/* ==========================================================================
+   END: Shared data, card, table, and form components (role pages)
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: Shared content area, breadcrumbs, and dashboard utilities (all pages)
+   ========================================================================== */
+
 .content-area {
     flex: 1;
     min-width: 0;
@@ -1228,6 +1251,14 @@ a {
 .stat-label {
     font-size: 0.75rem;
 }
+
+/* ==========================================================================
+   END: Shared content area, breadcrumbs, and dashboard utilities (all pages)
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: index.html specific styles (portal home)
+   ========================================================================== */
 
 .portal-home-hero {
     display: grid;
@@ -1325,6 +1356,14 @@ a {
 .portal-home-grid .gm-panel-card {
     height: 100%;
 }
+
+/* ==========================================================================
+   END: index.html specific styles (portal home)
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: GeneralManager/SchoolDetails.html specific styles
+   ========================================================================== */
 
 .school-detail-hero {
     display: flex;
@@ -1454,6 +1493,15 @@ a {
     background: #f59e0b;
 }
 
+/* ==========================================================================
+   END: GeneralManager/SchoolDetails.html specific styles
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: Shared standalone view toolbar and layout base
+   Used by calendar.html, messages.html, and settings.html.
+   ========================================================================== */
+
 .shared-view-toolbar {
     display: flex;
     gap: 0.75rem;
@@ -1477,6 +1525,14 @@ a {
     gap: 1rem;
     align-items: start;
 }
+
+/* ==========================================================================
+   END: Shared standalone view toolbar and layout base
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: calendar.html specific styles
+   ========================================================================== */
 
 .calendar-layout {
     grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
@@ -1755,6 +1811,15 @@ a {
     flex-direction: column;
 }
 
+/* ==========================================================================
+   END: calendar.html specific styles
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: Shared row/card base
+   Used by calendar.html, messages.html, and settings.html.
+   ========================================================================== */
+
 .schedule-row,
 .message-item,
 .settings-nav-link,
@@ -1765,6 +1830,14 @@ a {
     border-radius: 0.9rem;
     background: #f8fafc;
 }
+
+/* ==========================================================================
+   END: Shared row/card base
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: calendar.html specific styles (schedule rows and empty state)
+   ========================================================================== */
 
 .schedule-row {
     padding: 0.85rem 0.9rem;
@@ -1843,6 +1916,14 @@ a {
     font-size: 0.78rem;
     line-height: 1.45;
 }
+
+/* ==========================================================================
+   END: calendar.html specific styles (schedule rows and empty state)
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: messages.html specific styles
+   ========================================================================== */
 
 .messages-layout {
     grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
@@ -2000,6 +2081,14 @@ a {
     min-height: 5rem;
 }
 
+/* ==========================================================================
+   END: messages.html specific styles
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: settings.html specific styles
+   ========================================================================== */
+
 .settings-layout {
     grid-template-columns: minmax(220px, 0.35fr) minmax(0, 1fr);
 }
@@ -2151,6 +2240,14 @@ a {
     background: #475569;
 }
 
+/* ==========================================================================
+   END: settings.html specific styles
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: Shared footer, overlay, and mobile table helpers (all pages)
+   ========================================================================== */
+
 .app-footer {
     display: flex;
     padding: 0.9rem 1.75rem;
@@ -2187,6 +2284,15 @@ body.mobile-friendly-view .gm-table-wrap {
 #sidebarOverlay.show {
     display: block;
 }
+
+/* ==========================================================================
+   END: Shared footer, overlay, and mobile table helpers (all pages)
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: Responsive overrides (shared and page-specific)
+   When splitting files, keep page-prefixed selectors with their matching page CSS.
+   ========================================================================== */
 
 @media (max-width: 991.98px) {
     #appSidebar {
@@ -2811,6 +2917,14 @@ body.mobile-friendly-view .gm-table-wrap {
     }
 }
 
+/* ==========================================================================
+   END: Responsive overrides (shared and page-specific)
+   ========================================================================== */
+
+/* ==========================================================================
+   BEGIN: Shared browser scrollbar styles (all pages)
+   ========================================================================== */
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -2824,3 +2938,7 @@ body.mobile-friendly-view .gm-table-wrap {
 ::-webkit-scrollbar-thumb:hover {
     background: #adb5bd;
 }
+
+/* ==========================================================================
+   END: Shared browser scrollbar styles (all pages)
+   ========================================================================== */
