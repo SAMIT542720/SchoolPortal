@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="School details example for the General Manager workspace" />
+    <title>School Portal | School Details</title>
+    <script src="../_LayoutScripts.js"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="../_Layoutstyles.css" />
+</head>
+
+<body class="mobile-friendly-view">
+<template id="schoolDetailsTemplate">
+    <div class="page-title-row">
+        <h2 id="pageTitle">School Details</h2>
+        <p class="page-lead">Example detail view for a selected school profile, operational health, enrollment, and manager status.</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="Dashboard.html">General Manager</a></li>
+                <li class="breadcrumb-item"><a href="Schools.html">Schools Directory</a></li>
+                <li class="breadcrumb-item active" id="breadcrumbCurrent">Bright Future Academy</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="school-detail-hero" aria-labelledby="schoolDetailsTitle">
+        <div class="school-detail-hero-main">
+            <div class="school-detail-logo"><i class="fas fa-school"></i></div>
+            <div>
+                <h3 class="school-detail-title" id="schoolDetailsTitle">Bright Future Academy</h3>
+                <div class="school-detail-meta">
+                    <span class="gm-meta">SCH-1001</span>
+                    <span class="gm-meta">Central District</span>
+                    <span class="gm-meta">K-12</span>
+                    <span class="status-pill active">Active</span>
+                </div>
+                <p class="school-detail-copy">
+                    A full K-12 school profile covering enrollment, staffing, approvals, compliance status, and current operating indicators for general management review.
+                </p>
+            </div>
+        </div>
+        <div class="school-detail-actions">
+            <a class="gm-action-btn" href="Schools.html">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Schools</span>
+            </a>
+            <button class="gm-action-btn" type="button">
+                <i class="fas fa-file-export"></i>
+                <span>Export Profile</span>
+            </button>
+            <button class="gm-primary-btn" type="button">
+                <i class="fas fa-pen-to-square"></i>
+                <span>Edit School</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="gm-kpi-grid mb-4" aria-label="School summary">
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon primary"><i class="fas fa-user-graduate"></i></div>
+            <div>
+                <div class="gm-kpi-label">Students</div>
+                <div class="gm-kpi-value">1,248</div>
+                <div class="gm-kpi-trend positive">+42 this academic year</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon success"><i class="fas fa-chalkboard-teacher"></i></div>
+            <div>
+                <div class="gm-kpi-label">Teachers</div>
+                <div class="gm-kpi-value">84</div>
+                <div class="gm-kpi-trend positive">12 departments covered</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon warning"><i class="fas fa-layer-group"></i></div>
+            <div>
+                <div class="gm-kpi-label">Classes</div>
+                <div class="gm-kpi-value">36</div>
+                <div class="gm-kpi-trend warning">2 room changes pending</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon danger"><i class="fas fa-clipboard-check"></i></div>
+            <div>
+                <div class="gm-kpi-label">Attendance</div>
+                <div class="gm-kpi-value">96%</div>
+                <div class="gm-kpi-trend positive">Above district target</div>
+            </div>
+        </article>
+    </section>
+
+    <div class="school-detail-grid">
+        <div class="school-detail-stack">
+            <section class="gm-panel-card" aria-labelledby="schoolProfileTitle">
+                <div class="gm-panel-header">
+                    <h3 class="gm-panel-title" id="schoolProfileTitle">School profile</h3>
+                    <p class="gm-panel-subtitle">Core information for general management review.</p>
+                </div>
+                <div class="school-detail-info-grid">
+                    <div class="school-detail-info-item">
+                        <span class="school-detail-info-label">Official Name</span>
+                        <span class="school-detail-info-value">Bright Future Academy</span>
+                    </div>
+                    <div class="school-detail-info-item">
+                        <span class="school-detail-info-label">Registration Code</span>
+                        <span class="school-detail-info-value">SCH-1001</span>
+                    </div>
+                    <div class="school-detail-info-item">
+                        <span class="school-detail-info-label">Address</span>
+                        <span class="school-detail-info-value">24 Avenue Hassan II, Casablanca</span>
+                    </div>
+                    <div class="school-detail-info-item">
+                        <span class="school-detail-info-label">Phone</span>
+                        <span class="school-detail-info-value">+212 522 000 120</span>
+                    </div>
+                    <div class="school-detail-info-item">
+                        <span class="school-detail-info-label">Email</span>
+                        <span class="school-detail-info-value">office@brightfuture.local</span>
+                    </div>
+                    <div class="school-detail-info-item">
+                        <span class="school-detail-info-label">Created</span>
+                        <span class="school-detail-info-value">September 2021</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gm-table-card" aria-labelledby="enrollmentTitle">
+                <div class="gm-table-header">
+                    <div>
+                        <h3 class="gm-table-title" id="enrollmentTitle">Enrollment by level</h3>
+                        <p class="gm-table-subtitle">A sample breakdown of students, classes, and capacity.</p>
+                    </div>
+                    <span class="gm-table-count">1,248 Students</span>
+                </div>
+                <div class="gm-table-wrap">
+                    <table class="table gm-table gm-table-stack">
+                        <thead>
+                            <tr>
+                                <th scope="col">Level</th>
+                                <th scope="col">Students</th>
+                                <th scope="col">Classes</th>
+                                <th scope="col">Capacity</th>
+                                <th scope="col">Utilization</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Primary</td>
+                                <td>428</td>
+                                <td>12</td>
+                                <td>450</td>
+                                <td>95%</td>
+                                <td><span class="status-pill active">Healthy</span></td>
+                            </tr>
+                            <tr>
+                                <td>Middle School</td>
+                                <td>376</td>
+                                <td>11</td>
+                                <td>390</td>
+                                <td>96%</td>
+                                <td><span class="status-pill active">Healthy</span></td>
+                            </tr>
+                            <tr>
+                                <td>Secondary</td>
+                                <td>444</td>
+                                <td>13</td>
+                                <td>430</td>
+                                <td>103%</td>
+                                <td><span class="status-pill pending">Over Target</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="gm-panel-card" aria-labelledby="activityTitle">
+                <div class="gm-panel-header">
+                    <h3 class="gm-panel-title" id="activityTitle">Recent activity</h3>
+                    <p class="gm-panel-subtitle">Recent school-level changes visible to the general manager.</p>
+                </div>
+                <div class="gm-status-list">
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-user-plus"></i>Manager replacement request submitted</span>
+                        <span class="status-pill review">In Review</span>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-calendar-week"></i>Timetable updates synced</span>
+                        <span class="status-pill active">Complete</span>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-file-circle-check"></i>Annual license uploaded</span>
+                        <span class="status-pill active">Verified</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="school-detail-stack">
+            <section class="gm-panel-card" aria-labelledby="managerTitle">
+                <div class="gm-panel-header">
+                    <h3 class="gm-panel-title" id="managerTitle">School manager</h3>
+                    <p class="gm-panel-subtitle">Assigned operational contact.</p>
+                </div>
+                <div class="school-cell mb-3">
+                    <div class="school-logo"><i class="fas fa-user-tie"></i></div>
+                    <div>
+                        <div class="school-name">Laila Karim</div>
+                        <div class="school-sub">Manager since 2023</div>
+                    </div>
+                </div>
+                <div class="gm-status-list">
+                    <div class="gm-status-row">
+                        <span class="gm-status-label">Account status</span>
+                        <span class="status-pill active">Active</span>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label">Last login</span>
+                        <strong>Today</strong>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label">Open requests</span>
+                        <strong>2</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gm-panel-card" aria-labelledby="healthTitle">
+                <div class="gm-panel-header">
+                    <h3 class="gm-panel-title" id="healthTitle">Operational health</h3>
+                    <p class="gm-panel-subtitle">Sample metrics for quick review.</p>
+                </div>
+                <div class="gm-status-list">
+                    <div>
+                        <div class="gm-status-row mb-2">
+                            <span class="gm-status-label">Attendance submission</span>
+                            <strong>96%</strong>
+                        </div>
+                        <div class="school-detail-progress">
+                            <span class="school-detail-progress-bar success" style="width: 96%;"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="gm-status-row mb-2">
+                            <span class="gm-status-label">Fee collection</span>
+                            <strong>91%</strong>
+                        </div>
+                        <div class="school-detail-progress">
+                            <span class="school-detail-progress-bar" style="width: 91%;"></span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="gm-status-row mb-2">
+                            <span class="gm-status-label">Compliance documents</span>
+                            <strong>88%</strong>
+                        </div>
+                        <div class="school-detail-progress">
+                            <span class="school-detail-progress-bar warning" style="width: 88%;"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gm-panel-card" aria-labelledby="documentsTitle">
+                <div class="gm-panel-header">
+                    <h3 class="gm-panel-title" id="documentsTitle">Documents</h3>
+                    <p class="gm-panel-subtitle">Compliance files for this example school.</p>
+                </div>
+                <div class="gm-status-list">
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-file-pdf"></i>Operating license</span>
+                        <span class="status-pill active">Valid</span>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-file-shield"></i>Safety certificate</span>
+                        <span class="status-pill active">Valid</span>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-file-invoice-dollar"></i>Financial report</span>
+                        <span class="status-pill pending">Due Soon</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gm-panel-card" aria-labelledby="quickActionsTitle">
+                <div class="gm-panel-header">
+                    <h3 class="gm-panel-title" id="quickActionsTitle">Quick actions</h3>
+                    <p class="gm-panel-subtitle">Example actions for this profile.</p>
+                </div>
+                <div class="gm-quick-actions">
+                    <a class="gm-quick-action" href="School-Managers.html">
+                        <span class="gm-quick-action-icon"><i class="fas fa-user-tie"></i></span>
+                        <span>
+                            <strong>Manager Account</strong>
+                            <small>Review access and account details</small>
+                        </span>
+                    </a>
+                    <a class="gm-quick-action" href="Reports.html">
+                        <span class="gm-quick-action-icon"><i class="fas fa-chart-pie"></i></span>
+                        <span>
+                            <strong>Open Reports</strong>
+                            <small>View school-level report samples</small>
+                        </span>
+                    </a>
+                </div>
+            </section>
+        </aside>
+    </div>
+</template>
+
+<script src="../_RootPageShell.js"></script>
+<script>
+    SchoolPortalRootShell.render({
+        pageHeading: 'School Details',
+        activePath: '/generalmanager/schools',
+        templateId: 'schoolDetailsTemplate',
+        rootPrefix: '../'
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmwmCHCKPRZAqNzLIXMqe7tNnZLw"
+        crossorigin="anonymous"></script>
+</body>
+</html>

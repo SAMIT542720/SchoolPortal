@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="School Management Portal Messages" />
+    <title>School Portal | Messages</title>
+    <script src="_LayoutScripts.js"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="_Layoutstyles.css" />
+</head>
+
+<body class="mobile-friendly-view">
+<template id="messagesViewTemplate">
+    <div class="page-title-row">
+        <h2 id="pageTitle">Messages</h2>
+        <p class="page-lead">Review announcements, parent conversations, teacher notes, and internal school updates.</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" id="breadcrumbCurrent">Messages</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="shared-view-toolbar">
+        <div class="gm-search-wrap flex-grow-1">
+            <i class="fas fa-search gm-search-icon" aria-hidden="true"></i>
+            <input class="gm-search-input" type="search" placeholder="Search by sender, subject, student, or class" />
+        </div>
+        <div class="shared-view-actions">
+            <button class="gm-action-btn" type="button">
+                <i class="fas fa-inbox"></i>
+                <span>Inbox</span>
+            </button>
+            <button class="gm-action-btn" type="button">
+                <i class="fas fa-filter"></i>
+                <span>Unread</span>
+            </button>
+            <button class="gm-primary-btn" type="button">
+                <i class="fas fa-pen"></i>
+                <span>Compose</span>
+            </button>
+        </div>
+    </div>
+
+    <section class="gm-kpi-grid mb-4" aria-label="Messages summary">
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon primary"><i class="fas fa-envelope-open-text"></i></div>
+            <div>
+                <div class="gm-kpi-label">Unread</div>
+                <div class="gm-kpi-value">5</div>
+                <div class="gm-kpi-trend warning">2 from parents</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon success"><i class="fas fa-paper-plane"></i></div>
+            <div>
+                <div class="gm-kpi-label">Sent Today</div>
+                <div class="gm-kpi-value">18</div>
+                <div class="gm-kpi-trend positive">All delivered</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon warning"><i class="fas fa-star"></i></div>
+            <div>
+                <div class="gm-kpi-label">Priority</div>
+                <div class="gm-kpi-value">3</div>
+                <div class="gm-kpi-trend negative">One needs reply</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon danger"><i class="fas fa-comments"></i></div>
+            <div>
+                <div class="gm-kpi-label">Open Threads</div>
+                <div class="gm-kpi-value">26</div>
+                <div class="gm-kpi-trend positive">8 updated this week</div>
+            </div>
+        </article>
+    </section>
+
+    <div class="messages-layout">
+        <section class="gm-panel-card" aria-labelledby="messageInboxTitle">
+            <div class="gm-panel-header">
+                <h3 class="gm-panel-title" id="messageInboxTitle">Inbox</h3>
+                <p class="gm-panel-subtitle">Latest conversations sorted by recent activity.</p>
+            </div>
+
+            <div class="message-list">
+                <button class="message-item active" type="button">
+                    <span class="message-avatar">LB</span>
+                    <span class="message-preview">
+                        <span class="message-preview-top">
+                            <span class="message-sender">Laila Bennis</span>
+                            <span class="message-time">09:42</span>
+                        </span>
+                        <span class="message-subject">Class 10-A attendance follow-up</span>
+                        <span class="message-snippet">Can you confirm whether the medical notes were attached for Omar and Lina?</span>
+                    </span>
+                </button>
+
+                <button class="message-item" type="button">
+                    <span class="message-avatar">MO</span>
+                    <span class="message-preview">
+                        <span class="message-preview-top">
+                            <span class="message-sender">Mr. Ouazzani</span>
+                            <span class="message-time">08:15</span>
+                        </span>
+                        <span class="message-subject">Math midterm room assignment</span>
+                        <span class="message-snippet">Room 12 is too small for both sections. Hall B is available after 10:00.</span>
+                    </span>
+                </button>
+
+                <button class="message-item" type="button">
+                    <span class="message-avatar">SK</span>
+                    <span class="message-preview">
+                        <span class="message-preview-top">
+                            <span class="message-sender">Sara Karim</span>
+                            <span class="message-time">Yesterday</span>
+                        </span>
+                        <span class="message-subject">Parent meeting request</span>
+                        <span class="message-snippet">I would like to discuss Yassine&apos;s latest behavior report and support plan.</span>
+                    </span>
+                </button>
+
+                <button class="message-item" type="button">
+                    <span class="message-avatar">AM</span>
+                    <span class="message-preview">
+                        <span class="message-preview-top">
+                            <span class="message-sender">Admin Office</span>
+                            <span class="message-time">Apr 15</span>
+                        </span>
+                        <span class="message-subject">Policy update acknowledgement</span>
+                        <span class="message-snippet">Please review the updated field trip approval workflow before Friday.</span>
+                    </span>
+                </button>
+
+                <button class="message-item" type="button">
+                    <span class="message-avatar">RT</span>
+                    <span class="message-preview">
+                        <span class="message-preview-top">
+                            <span class="message-sender">Rabat Teachers</span>
+                            <span class="message-time">Apr 14</span>
+                        </span>
+                        <span class="message-subject">Shared science lab schedule</span>
+                        <span class="message-snippet">The lab rotation has been updated for the next two weeks.</span>
+                    </span>
+                </button>
+            </div>
+        </section>
+
+        <section class="gm-panel-card" aria-labelledby="messageThreadTitle">
+            <div class="message-thread-header">
+                <div>
+                    <h3 class="message-thread-title" id="messageThreadTitle">Class 10-A attendance follow-up</h3>
+                    <p class="message-thread-meta">Laila Bennis, School Counselor, Admin Office</p>
+                </div>
+                <div class="gm-actions">
+                    <button class="gm-action-btn" type="button">
+                        <i class="fas fa-archive"></i>
+                        <span>Archive</span>
+                    </button>
+                    <button class="gm-action-btn" type="button">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add Person</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="message-bubbles" aria-label="Conversation thread">
+                <div class="message-bubble">
+                    <small>Laila Bennis - 09:12</small>
+                    Three Class 10-A absences were flagged this morning. Can you confirm whether the medical notes were attached for Omar and Lina?
+                </div>
+
+                <div class="message-bubble outgoing">
+                    <small>Admin - 09:23</small>
+                    Omar&apos;s note is attached to his attendance record. Lina&apos;s parent sent the file by email, but it still needs to be uploaded.
+                </div>
+
+                <div class="message-bubble">
+                    <small>School Counselor - 09:35</small>
+                    I can contact Lina&apos;s parent and attach the file to the student case after the call.
+                </div>
+
+                <div class="message-bubble">
+                    <small>Laila Bennis - 09:42</small>
+                    Good. Please tag the attendance team when it is attached so the absence can be excused before the daily report closes.
+                </div>
+            </div>
+
+            <form class="message-compose">
+                <textarea class="gm-textarea" aria-label="Reply message" placeholder="Write a reply..."></textarea>
+                <button class="gm-primary-btn" type="button">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send</span>
+                </button>
+            </form>
+        </section>
+    </div>
+</template>
+
+<script src="_RootPageShell.js"></script>
+<script>
+    SchoolPortalRootShell.render({
+        pageHeading: 'Messages',
+        activePath: '/messages',
+        templateId: 'messagesViewTemplate'
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmwmCHCKPRZAqNzLIXMqe7tNnZLw"
+        crossorigin="anonymous"></script>
+</body>
+</html>

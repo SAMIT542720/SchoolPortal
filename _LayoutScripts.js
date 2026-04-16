@@ -368,18 +368,39 @@
     }
 
     function initActiveNavigation() {
-        var path = window.location.pathname.replace(/\/+$/, '') || '/';
+        function normalizePath(value) {
+            return (value || '').replace(/\/+$/, '') || '/';
+        }
+
+        function pathFromHref(hrefAttr) {
+            if (!hrefAttr) {
+                return '';
+            }
+
+            try {
+                return normalizePath(new URL(hrefAttr, window.location.href).pathname);
+            } catch (error) {
+                return '';
+            }
+        }
+
+        var path = normalizePath(window.location.pathname);
+        var comparablePath = path.toLowerCase();
 
         document.querySelectorAll('.sidebar-nav .nav-link[data-path]').forEach(function (link) {
-            var dataPath = (link.dataset.path || '').replace(/\/+$/, '');
+            var dataPath = normalizePath(link.dataset.path || '');
+            var comparableDataPath = dataPath.toLowerCase();
             var hrefAttr = link.getAttribute('href') || '';
-            var hrefPath = hrefAttr
-                ? new URL(hrefAttr, window.location.origin).pathname.replace(/\/+$/, '')
-                : '';
+            var hrefPath = pathFromHref(hrefAttr);
+            var comparableHrefPath = hrefPath.toLowerCase();
             var matchesDataPath =
-                dataPath && (path === dataPath || path.startsWith(dataPath + '/'));
+                comparableDataPath &&
+                (comparablePath === comparableDataPath ||
+                    comparablePath.startsWith(comparableDataPath + '/'));
             var matchesHrefPath =
-                hrefPath && (path === hrefPath || path.startsWith(hrefPath + '/'));
+                comparableHrefPath &&
+                (comparablePath === comparableHrefPath ||
+                    comparablePath.startsWith(comparableHrefPath + '/'));
 
             if (!matchesDataPath && !matchesHrefPath) {
                 return;

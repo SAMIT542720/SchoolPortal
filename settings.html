@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="School Management Portal Settings" />
+    <title>School Portal | Settings</title>
+    <script src="_LayoutScripts.js"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="_Layoutstyles.css" />
+</head>
+
+<body class="mobile-friendly-view">
+<template id="settingsViewTemplate">
+    <div class="page-title-row">
+        <h2 id="pageTitle">Settings</h2>
+        <p class="page-lead">Manage account details, notifications, security, and display preferences for the portal.</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" id="breadcrumbCurrent">Settings</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="shared-view-toolbar">
+        <div>
+            <p class="page-lead">Admin workspace settings</p>
+        </div>
+        <div class="shared-view-actions">
+            <button class="gm-action-btn" type="button">
+                <i class="fas fa-rotate-left"></i>
+                <span>Reset</span>
+            </button>
+            <button class="gm-primary-btn" type="button">
+                <i class="fas fa-floppy-disk"></i>
+                <span>Save Changes</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="settings-layout">
+        <aside class="gm-panel-card" aria-label="Settings sections">
+            <nav class="settings-nav">
+                <a class="settings-nav-link active" href="#account">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Account</span>
+                </a>
+                <a class="settings-nav-link" href="#notifications">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+                <a class="settings-nav-link" href="#security">
+                    <i class="fas fa-lock"></i>
+                    <span>Security</span>
+                </a>
+                <a class="settings-nav-link" href="#display">
+                    <i class="fas fa-sliders"></i>
+                    <span>Display</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="settings-section-stack">
+            <section class="gm-form-card" id="account" aria-labelledby="accountSettingsTitle">
+                <div class="gm-form-card-header">
+                    <h3 class="gm-form-card-title" id="accountSettingsTitle">Account details</h3>
+                    <p class="gm-form-card-subtitle">Primary information shown in the header and administrative records.</p>
+                </div>
+
+                <div class="settings-profile-row">
+                    <div class="settings-profile-avatar">A</div>
+                    <div class="settings-profile-copy">
+                        <strong>Admin User</strong>
+                        <span>admin@schoolportal.local</span>
+                    </div>
+                    <button class="gm-action-btn" type="button">
+                        <i class="fas fa-camera"></i>
+                        <span>Change Photo</span>
+                    </button>
+                </div>
+
+                <div class="gm-form-grid">
+                    <div>
+                        <label class="gm-field-label" for="settingsFullName">Full name</label>
+                        <input class="gm-input" id="settingsFullName" type="text" value="Admin User" />
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="settingsEmail">Email address</label>
+                        <input class="gm-input" id="settingsEmail" type="email" value="admin@schoolportal.local" />
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="settingsPhone">Phone number</label>
+                        <input class="gm-input" id="settingsPhone" type="tel" value="+212 600 000 000" />
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="settingsRole">Default role</label>
+                        <select class="gm-select" id="settingsRole">
+                            <option>Administrator</option>
+                            <option>General Manager</option>
+                            <option>School Manager</option>
+                            <option>Teacher</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="settingsLanguage">Language</label>
+                        <select class="gm-select" id="settingsLanguage">
+                            <option>English</option>
+                            <option>Francais</option>
+                            <option>Arabic</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="settingsTimezone">Timezone</label>
+                        <select class="gm-select" id="settingsTimezone">
+                            <option>Europe/Istanbul</option>
+                            <option>Africa/Casablanca</option>
+                            <option>UTC</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gm-form-card" id="notifications" aria-labelledby="notificationSettingsTitle">
+                <div class="gm-form-card-header">
+                    <h3 class="gm-form-card-title" id="notificationSettingsTitle">Notification preferences</h3>
+                    <p class="gm-form-card-subtitle">Choose which alerts should appear in the header and message center.</p>
+                </div>
+
+                <div class="gm-status-list">
+                    <div class="preference-row">
+                        <div class="preference-copy">
+                            <strong>Attendance alerts</strong>
+                            <small>Notify when daily absence thresholds are reached for a class or school.</small>
+                        </div>
+                        <label class="gm-switch">
+                            <input type="checkbox" checked />
+                            <span class="gm-switch-slider"></span>
+                            <span class="gm-switch-copy"><strong>On</strong><small>Immediate</small></span>
+                        </label>
+                    </div>
+                    <div class="preference-row">
+                        <div class="preference-copy">
+                            <strong>Parent messages</strong>
+                            <small>Show unread parent conversations in the notification dropdown.</small>
+                        </div>
+                        <label class="gm-switch">
+                            <input type="checkbox" checked />
+                            <span class="gm-switch-slider"></span>
+                            <span class="gm-switch-copy"><strong>On</strong><small>Inbox</small></span>
+                        </label>
+                    </div>
+                    <div class="preference-row">
+                        <div class="preference-copy">
+                            <strong>Grade publishing</strong>
+                            <small>Send alerts when exam results or report cards become visible.</small>
+                        </div>
+                        <label class="gm-switch">
+                            <input type="checkbox" checked />
+                            <span class="gm-switch-slider"></span>
+                            <span class="gm-switch-copy"><strong>On</strong><small>Digest</small></span>
+                        </label>
+                    </div>
+                    <div class="preference-row">
+                        <div class="preference-copy">
+                            <strong>Finance reminders</strong>
+                            <small>Notify managers about pending fee reviews and payment reconciliation.</small>
+                        </div>
+                        <label class="gm-switch">
+                            <input type="checkbox" />
+                            <span class="gm-switch-slider"></span>
+                            <span class="gm-switch-copy"><strong>Off</strong><small>Muted</small></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gm-form-card" id="security" aria-labelledby="securitySettingsTitle">
+                <div class="gm-form-card-header">
+                    <h3 class="gm-form-card-title" id="securitySettingsTitle">Security</h3>
+                    <p class="gm-form-card-subtitle">Update password access and session behavior.</p>
+                </div>
+
+                <div class="gm-form-grid">
+                    <div>
+                        <label class="gm-field-label" for="settingsCurrentPassword">Current password</label>
+                        <input class="gm-input" id="settingsCurrentPassword" type="password" placeholder="Enter current password" />
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="settingsNewPassword">New password</label>
+                        <input class="gm-input" id="settingsNewPassword" type="password" placeholder="Enter new password" />
+                    </div>
+                    <div class="gm-field-span-2">
+                        <label class="gm-field-label" for="settingsSessionLength">Session timeout</label>
+                        <select class="gm-select" id="settingsSessionLength">
+                            <option>30 minutes</option>
+                            <option>1 hour</option>
+                            <option>4 hours</option>
+                            <option>End of day</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="gm-form-actions mt-3">
+                    <button class="gm-action-btn" type="button">
+                        <i class="fas fa-key"></i>
+                        <span>Update Password</span>
+                    </button>
+                    <button class="gm-action-btn" type="button">
+                        <i class="fas fa-right-from-bracket"></i>
+                        <span>Sign Out Devices</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="gm-form-card" id="display" aria-labelledby="displaySettingsTitle">
+                <div class="gm-form-card-header">
+                    <h3 class="gm-form-card-title" id="displaySettingsTitle">Display</h3>
+                    <p class="gm-form-card-subtitle">Set the default portal view and dashboard density.</p>
+                </div>
+
+                <div class="gm-form-grid">
+                    <div>
+                        <label class="gm-field-label" for="settingsStartPage">Start page</label>
+                        <select class="gm-select" id="settingsStartPage">
+                            <option>Portal Home</option>
+                            <option>Calendar</option>
+                            <option>Messages</option>
+                            <option>General Manager Dashboard</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="gm-field-label" for="settingsDashboardDensity">Dashboard density</label>
+                        <select class="gm-select" id="settingsDashboardDensity">
+                            <option>Comfortable</option>
+                            <option>Compact</option>
+                        </select>
+                    </div>
+                    <div class="gm-field-span-2">
+                        <span class="gm-field-label">Accent color</span>
+                        <div class="settings-color-list" aria-label="Accent color options">
+                            <button class="settings-color-option active" type="button" aria-label="Blue accent">
+                                <span class="settings-color-swatch blue"></span>
+                            </button>
+                            <button class="settings-color-option" type="button" aria-label="Green accent">
+                                <span class="settings-color-swatch green"></span>
+                            </button>
+                            <button class="settings-color-option" type="button" aria-label="Gold accent">
+                                <span class="settings-color-swatch gold"></span>
+                            </button>
+                            <button class="settings-color-option" type="button" aria-label="Slate accent">
+                                <span class="settings-color-swatch slate"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gm-form-actions mt-3">
+                    <button class="gm-primary-btn" type="button">
+                        <i class="fas fa-floppy-disk"></i>
+                        <span>Save Settings</span>
+                    </button>
+                    <button class="gm-action-btn" type="button">
+                        <i class="fas fa-eye"></i>
+                        <span>Preview</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+</template>
+
+<script src="_RootPageShell.js"></script>
+<script>
+    SchoolPortalRootShell.render({
+        pageHeading: 'Settings',
+        activePath: '/settings',
+        templateId: 'settingsViewTemplate'
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmwmCHCKPRZAqNzLIXMqe7tNnZLw"
+        crossorigin="anonymous"></script>
+</body>
+</html>

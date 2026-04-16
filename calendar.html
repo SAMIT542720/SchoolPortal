@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="School Management Portal Calendar" />
+    <title>School Portal | Calendar</title>
+    <script src="_LayoutScripts.js"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="_Layoutstyles.css" />
+</head>
+
+<body class="mobile-friendly-view">
+<template id="calendarViewTemplate">
+    <div class="page-title-row">
+        <h2 id="pageTitle">Calendar</h2>
+        <p class="page-lead">Track classes, exams, meetings, deadlines, and school events from one shared schedule.</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" id="breadcrumbCurrent">Calendar</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="shared-view-toolbar calendar-toolbar">
+        <div class="calendar-toolbar-copy">
+            <span class="calendar-current-label">Today</span>
+            <strong id="calendarTodayHeading">Loading date...</strong>
+            <small id="calendarSelectedHint">Select a day to review its schedule.</small>
+        </div>
+        <div class="shared-view-actions calendar-toolbar-actions">
+            <button class="calendar-icon-btn" type="button" data-calendar-action="prev-day" aria-label="Previous day">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <label class="visually-hidden" for="calendarDatePicker">Choose calendar date</label>
+            <input class="calendar-date-input" id="calendarDatePicker" type="date" />
+            <button class="calendar-icon-btn" type="button" data-calendar-action="next-day" aria-label="Next day">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="gm-action-btn" type="button" data-calendar-action="today">
+                <i class="fas fa-calendar-day"></i>
+                <span>Today</span>
+            </button>
+            <button class="gm-primary-btn" type="button">
+                <i class="fas fa-plus"></i>
+                <span>Add Event</span>
+            </button>
+        </div>
+    </div>
+
+    <section class="gm-kpi-grid mb-4" aria-label="Calendar summary">
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon primary"><i class="fas fa-calendar-day"></i></div>
+            <div>
+                <div class="gm-kpi-label">Today&apos;s Date</div>
+                <div class="gm-kpi-value" id="calendarTodayDateValue">--</div>
+                <div class="gm-kpi-trend positive" id="calendarTodayDateLabel">Loading date</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon success"><i class="fas fa-calendar-check"></i></div>
+            <div>
+                <div class="gm-kpi-label">Selected Day Events</div>
+                <div class="gm-kpi-value" id="calendarSelectedEventCount">0</div>
+                <div class="gm-kpi-trend positive" id="calendarSelectedEventLabel">No day selected</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon warning"><i class="fas fa-people-arrows"></i></div>
+            <div>
+                <div class="gm-kpi-label">Meetings This Month</div>
+                <div class="gm-kpi-value" id="calendarMeetingsCount">0</div>
+                <div class="gm-kpi-trend warning">Includes parent and staff meetings</div>
+            </div>
+        </article>
+        <article class="gm-kpi-card">
+            <div class="gm-kpi-icon danger"><i class="fas fa-list-check"></i></div>
+            <div>
+                <div class="gm-kpi-label">Deadlines This Month</div>
+                <div class="gm-kpi-value" id="calendarDeadlinesCount">0</div>
+                <div class="gm-kpi-trend negative">Assignments, finance, and grade reviews</div>
+            </div>
+        </article>
+    </section>
+
+    <div class="calendar-layout" data-calendar-view>
+        <section class="gm-panel-card" aria-labelledby="calendarMonthTitle">
+            <div class="calendar-month-row">
+                <div>
+                    <h3 class="calendar-month-title" id="calendarMonthTitle">Calendar</h3>
+                    <p class="gm-panel-subtitle" id="calendarMonthSubtitle">Use the arrows or date field to move through days.</p>
+                </div>
+                <div class="calendar-control-group" aria-label="Calendar month controls">
+                    <button class="calendar-icon-btn" type="button" data-calendar-action="prev-month" aria-label="Previous month">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gm-action-btn" type="button" data-calendar-action="today">
+                        <i class="fas fa-calendar-days"></i>
+                        <span>Current Month</span>
+                    </button>
+                    <button class="calendar-icon-btn" type="button" data-calendar-action="next-month" aria-label="Next month">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="calendar-board-scroll">
+                <div class="calendar-board">
+                    <div class="calendar-weekdays" aria-hidden="true">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Sun</span>
+                    </div>
+                    <div class="calendar-days" id="calendarDays" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="settings-section-stack">
+            <section class="gm-panel-card" aria-labelledby="calendarSelectedDateTitle">
+                <div class="calendar-selected-date-card">
+                    <div class="calendar-selected-number" id="calendarSelectedDayNumber">--</div>
+                    <div class="calendar-selected-copy">
+                        <h3 id="calendarSelectedDateTitle">Select a date</h3>
+                        <p id="calendarSelectedDateMeta">Use the calendar grid, arrows, or date picker.</p>
+                    </div>
+                </div>
+                <div class="calendar-day-nav-row" aria-label="Selected day navigation">
+                    <button class="gm-action-btn" type="button" data-calendar-action="prev-day">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Previous Day</span>
+                    </button>
+                    <button class="gm-action-btn" type="button" data-calendar-action="today">
+                        <i class="fas fa-calendar-day"></i>
+                        <span>Today</span>
+                    </button>
+                    <button class="gm-action-btn" type="button" data-calendar-action="next-day">
+                        <span>Next Day</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section class="gm-panel-card" aria-labelledby="selectedScheduleTitle">
+                <div class="gm-panel-header">
+                    <h3 class="gm-panel-title" id="selectedScheduleTitle">Selected day schedule</h3>
+                    <p class="gm-panel-subtitle" id="calendarScheduleSubtitle">Events for the selected date appear here.</p>
+                </div>
+                <div class="schedule-list" id="calendarScheduleList" aria-live="polite"></div>
+            </section>
+
+            <section class="gm-panel-card" aria-labelledby="calendarLegendTitle">
+                <div class="gm-panel-header">
+                    <h3 class="gm-panel-title" id="calendarLegendTitle">Event categories</h3>
+                    <p class="gm-panel-subtitle">Counts update for the visible month.</p>
+                </div>
+                <div class="gm-status-list">
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-circle text-primary"></i>General school event</span>
+                        <span class="status-pill review" id="calendarGeneralCount">0</span>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-circle text-success"></i>Activities</span>
+                        <span class="status-pill active" id="calendarActivitiesCount">0</span>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-circle text-warning"></i>Deadlines</span>
+                        <span class="status-pill pending" id="calendarDeadlineCount">0</span>
+                    </div>
+                    <div class="gm-status-row">
+                        <span class="gm-status-label"><i class="fas fa-circle text-danger"></i>Exams</span>
+                        <span class="status-pill inactive" id="calendarExamCount">0</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</template>
+
+<script src="_RootPageShell.js"></script>
+<script>
+    SchoolPortalRootShell.render({
+        pageHeading: 'Calendar',
+        activePath: '/calendar',
+        templateId: 'calendarViewTemplate'
+    });
+</script>
+<script src="calander.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmwmCHCKPRZAqNzLIXMqe7tNnZLw"
+        crossorigin="anonymous"></script>
+</body>
+</html>
